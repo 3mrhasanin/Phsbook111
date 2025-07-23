@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفيزياء | أ. عمرو ابو حسين</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="شرح تفاعلي لمنهج الفيزياء للصف الحادي عشر (الفصل الدراسي الأول) في سلطنة عُمان، مقدم من الأستاذ عمرو ابو حسين. تمارين تفاعلية، شروحات بالفيديو، وحصص مباشرة.">
+    <meta name="keywords" content="فيزياء, الصف الحادي عشر, سلطنة عمان, عمرو ابو حسين, شرح, تمارين, حلول, منهج الفيزياء, المهارات العملية, السرعة والسرعة المتجهة, الحركة المتسارعة, القوى">
+    <meta name="author" content="الأستاذ عمرو ابو حسين">
+
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="الفيزياء | أ. عمرو ابو حسين" />
+    <meta property="og:description" content="شرح تفاعلي لمنهج الفيزياء للصف الحادي عشر في سلطنة عُمان." />
+    <meta property="og:image" content="https://i.postimg.cc/5yN3WbqW/IMG-20250722-045629.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="ضع هنا رابط صفحتك النهائي بعد النشر" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="الفيزياء | أ. عمرو ابو حسين">
+    <meta name="twitter:description" content="شرح تفاعلي لمنهج الفيزياء للصف الحادي عشر في سلطنة عُمان.">
+    <meta name="twitter:image" content="https://i.postimg.cc/5yN3WbqW/IMG-20250722-045629.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/P5gLpC3g/N-ACADEMY-LOGO.png">
+
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Cairo for Arabic text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Apply Cairo font to the entire body */
+        body {
+            font-family: 'Cairo', sans-serif;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+        }
+        /* Prevent body scroll when sidebar is open on mobile */
+        body.sidebar-open {
+            overflow: hidden;
+        }
+
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #aaa;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
+
+        /* Styling for the accordion menu */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details summary .arrow {
+            transition: transform 0.2s;
+        }
+        details[open] summary .arrow {
+            transform: rotate(90deg);
+        }
+        
+        /* A4 page effect for larger screens */
+        #page-content-container {
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+            position: relative;
+            overflow-y: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            #page-content-container {
+                aspect-ratio: 210 / 297;
+            }
+        }
+        
+        /* Watermark style */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 12vw; /* Significantly increased font size */
+            color: rgba(0, 0, 0, 0.07); /* Dark watermark */
+            font-weight: 700;
+            pointer-events: none;
+            z-index: 1;
+            white-space: nowrap; /* Ensures the name stays on one line */
+        }
+        
+        /* Styling for the lesson content */
+        .lesson-content {
+            text-align: right;
+            padding: 2rem 1.5rem; /* Responsive padding */
+            position: relative;
+            z-index: 2;
+            flex-grow: 1;
+        }
+        @media (min-width: 640px) {
+            .lesson-content {
+                padding: 2rem 2.5rem;
+            }
+        }
+        .lesson-content h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1e3a8a; /* Dark Blue */
+            border-bottom: 2px solid #93c5fd; /* Light Blue */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .lesson-content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1d4ed8; /* Medium Blue */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .lesson-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .lesson-content .rule-box {
+            background-color: #eff6ff; /* Very Light Blue */
+            border-right: 4px solid #3b82f6; /* Blue */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .lesson-content .example-box {
+            background-color: #fefce8; /* Light Yellow */
+            border-right: 4px solid #eab308; /* Yellow */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .lesson-content .exercise-box {
+             background-color: #f0fdf4; /* Light Green */
+            border-right: 4px solid #22c55e; /* Green */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .lesson-content .definitions-box {
+            background-color: #f5f3ff; /* Light Purple */
+            border-right: 4px solid #8b5cf6; /* Purple */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .answer-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            padding: 0 1rem;
+            margin-top: 0.5rem;
+        }
+        .answer-container.show {
+            max-height: 500px; /* Adjust as needed */
+            padding: 1rem;
+            margin-top: 0.5rem;
+        }
+        /* New style for the lesson footer */
+        .lesson-navigation-footer {
+            padding: 1rem 2.5rem 1.5rem 2.5rem;
+            z-index: 2;
+        }
+        /* Style for the cover page background */
+        .cover-background {
+            background-color: #fdfcfb;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23c7b299' fill-opacity='0.07'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0h1v5h5v1H6v5H5V6H0V5h5z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-gray-100 antialiased">
+
+    <div id="app-container" class="flex h-screen">
+
+        <!-- Main Content Area -->
+        <main class="flex-1 flex flex-col transition-all duration-300">
+            <!-- Header -->
+            <header class="bg-white shadow-md p-3 flex justify-between items-center z-20">
+                <div class="flex items-center gap-2 md:gap-4">
+                    <a href="#" class="bg-green-500 text-white px-3 py-1.5 rounded-lg hover:bg-green-600 transition-colors text-sm font-semibold">انضم للجروب</a>
+                    
+                    <!-- Dropdowns -->
+                    <div class="relative group">
+                        <button class="bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg hover:bg-gray-300 transition-colors text-sm font-semibold flex items-center gap-1">
+                            <span>الصفوف</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-32 z-30 right-0 md:right-auto">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">الصف العاشر</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">الصف الحادي عشر</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">الصف الثاني عشر</a>
+                        </div>
+                    </div>
+                     <div class="relative group">
+                        <button class="bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg hover:bg-gray-300 transition-colors text-sm font-semibold flex items-center gap-1">
+                            <span>المواد</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-32 z-30 right-0 md:right-auto">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">الفيزياء</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">الكيمياء</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">الأحياء</a>
+                        </div>
+                    </div>
+                    <!-- Login and Share Icon Buttons -->
+                    <a href="#" title="تسجيل الدخول" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-user-circle fa-2x"></i>
+                    </a>
+                    <button id="share-btn" title="مشاركة الموقع" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-share-alt fa-lg"></i>
+                    </button>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <h1 class="text-lg font-bold text-gray-700 hidden sm:block">الفيزياء</h1>
+                    <button id="home-btn" title="الصفحة الرئيسية" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-home fa-lg"></i>
+                    </button>
+                    <button id="menu-btn" class="lg:hidden text-2xl text-gray-600">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Page Display Area -->
+            <div class="flex-1 p-4 md:p-8 overflow-y-auto">
+                <div id="page-content-container" class="mx-auto max-w-4xl">
+                     <div id="page-display" class="flex-grow h-full">
+                        <!-- Content is generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-80 bg-white shadow-lg p-4 fixed top-0 right-0 h-full transform translate-x-full lg:relative lg:translate-x-0 lg:w-80 transition-transform duration-300 z-40 flex flex-col">
+            <div class="text-center mb-6">
+                <img src="https://i.postimg.cc/5yN3WbqW/IMG-20250722-045629.jpg" alt="صورة الأستاذ عمرو ابو حسين" class="w-24 h-24 rounded-full mx-auto mb-3 border-4 border-blue-200 object-cover">
+                <h2 class="text-xl font-bold text-gray-800">الأستاذ عمرو ابو حسين</h2>
+                <p class="text-sm text-gray-500">معلم الفيزياء</p>
+            </div>
+            
+            <div class="mb-4 border-y py-2">
+                 <a href="#" id="live-session-btn" class="flex items-center gap-3 p-3 rounded-lg bg-red-500 text-white font-bold hover:bg-red-600 transition-colors">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <span>الحصص المباشرة (Live)</span>
+                </a>
+            </div>
+
+            <nav id="table-of-contents" class="flex-1 overflow-y-auto">
+                <!-- Content will be generated by JavaScript -->
+            </nav>
+
+            <div class="mt-4 pt-4 border-t flex justify-center gap-6">
+                 <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-youtube fa-lg"></i></a>
+                 <a href="#" class="text-gray-500 hover:text-pink-500"><i class="fab fa-instagram fa-lg"></i></a>
+                 <a href="#" class="text-gray-500 hover:text-blue-700"><i class="fab fa-facebook fa-lg"></i></a>
+            </div>
+        </aside>
+        
+        <!-- Overlay for mobile -->
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30 transition-opacity duration-300"></div>
+
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/201283863088" target="_blank" class="fixed bottom-5 left-5 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-30">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+
+        <!-- Share Modal -->
+        <div id="share-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+            <div class="bg-white rounded-lg p-6 w-11/12 max-w-sm text-center">
+                <h3 class="text-xl font-bold mb-4">مشاركة الموقع</h3>
+                <p class="mb-4 text-gray-600">شارك هذا الكتاب التفاعلي مع زملائك!</p>
+                <input id="share-url-input" type="text" readonly class="w-full p-2 border rounded-lg text-center bg-gray-100">
+                <button id="copy-url-btn" class="mt-4 bg-blue-600 text-white w-full py-2 rounded-lg hover:bg-blue-700">نسخ الرابط</button>
+                <button id="close-modal-btn" class="mt-2 text-gray-500 hover:text-gray-700">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- STATE ---
+        let currentUnitIndex = null;
+        let currentLessonIndex = null;
+        let allLessons = [];
+
+        // --- DATA ---
+        const bookContent = {
+            units: [
+                {
+                    title: "الوحدة الأولى: المهارات العملية",
+                    locked: false,
+                    lessons: [
+                        { type: 'videos', title: "فيديوهات الشرح", videos: [ {title: "شرح القياس وأدواته"}, {title: "التعامل مع الأخطاء في القياس"}, {title: "مفهوم الدقة والضبط"}, {title: "حساب عدم اليقين"}, {title: "تطبيقات على الوحدات الدولية"}, {title: "مراجعة عامة للوحدة"} ] },
+                        { 
+                            title: "١-١ استخدام الأدوات واتباع التعليمات",
+                            content: [
+                                { type: 'heading', text: '١-١: استخدام الأدوات واتباع التعليمات' },
+                                { type: 'paragraph', text: 'تعتبر القدرة على استخدام أدوات القياس بشكل صحيح واتباع التعليمات بدقة هي حجر الزاوية في الفيزياء التجريبية. القياسات الدقيقة تؤدي إلى نتائج موثوقة يمكن البناء عليها.' },
+                                { type: 'heading4', text: 'أدوات قياس الطول' },
+                                { type: 'paragraph', text: 'من أبسط الأدوات المسطرة المترية، ولكن لدقة أعلى نستخدم القدمة ذات الورنية والميكروميتر.' },
+                                { type: 'rule', title: 'خطأ اختلاف المنظر (Parallax Error)', text: 'هو الخطأ الذي يحدث بسبب النظر إلى تدريج أداة القياس من زاوية غير عمودية، مما يؤدي إلى قراءة غير صحيحة. لتجنب هذا الخطأ، يجب أن يكون خط النظر عمودياً تماماً على التدريج عند أخذ القراءة.' },
+                                { type: 'paragraph', text: 'قبل استخدام أدوات القياس الدقيقة مثل القدمة ذات الورنية والميكروميتر، من الضروري التحقق من وجود "الخطأ الصفري". يتم ذلك عن طريق إغلاق فكي الأداة بالكامل والتأكد من أن قراءتها صفر. إذا لم تكن صفراً، فيجب تعديل جميع القياسات اللاحقة بمقدار هذا الخطأ.' },
+                                { 
+                                    type: 'example', 
+                                    title: 'مثال: قراءة القدمة ذات الورنية',
+                                    parts: [
+                                        { problem: 'جسم تم قياس قطره باستخدام قدمة ذات ورنية، فكانت قراءة التدريج الثابت 2.5 cm، وانطبق تدريج الورنية رقم 4 مع تدريج المسطرة. أوجد القطر علماً أن دقة القدمة 0.01 cm.', solution: 'القراءة = قراءة التدريج الثابت + (رقم تدريج الورنية المنطبق × دقة القدمة) <br> القراءة = 2.5 cm + (4 × 0.01 cm) = 2.54 cm.' }
+                                    ]
+                                },
+                                {
+                                    type: 'exercise',
+                                    title: 'تمرينات الدرس',
+                                    questions: [
+                                        { type: 'true_false', question: 'عند قياس طول جسم، يجب النظر بشكل مائل على المسطرة للحصول على أفضل قراءة.', answer: 'خطأ. يجب النظر بشكل عمودي لتجنب خطأ اختلاف المنظر.' },
+                                        { type: 'mcq', question: 'ما الأداة الأكثر دقة لقياس سمك سلك معدني؟', options: ['المسطرة المترية', 'القدمة ذات الورنية', 'الميكروميتر', 'شريط القياس'], answer: 'الميكروميتر' },
+                                        { type: 'problem', question: 'ما هو الخطأ الصفري وكيف يمكن معالجته؟', answer: 'الخطأ الصفري يحدث عندما لا يبدأ القياس من نقطة الصفر الصحيحة على الأداة. يمكن معالجته عن طريق طرح قيمة الخطأ من القراءة النهائية إذا كان موجباً، أو إضافتها إذا كان سالباً.' }
+                                    ]
+                                },
+                                { 
+                                    type: 'definitions',
+                                    title: 'مصطلحات علمية',
+                                    terms: [
+                                        { term: 'القدمة ذات الورنية (Vernier Caliper)', definition: 'أداة قياس دقيقة تستخدم لقياس الأبعاد الخارجية والداخلية وأعماق الأجسام بدقة تصل إلى 0.1 mm.' },
+                                        { term: 'الميكروميتر (Micrometer)', definition: 'أداة قياس أكثر دقة من القدمة، تستخدم لقياس الأبعاد الصغيرة جداً مثل سمك الأسلاك أو الأوراق بدقة تصل إلى 0.01 mm.' }
+                                    ]
+                                }
+                            ]
+                        },
+                        { 
+                            title: "١-٢ جمع الأدلة",
+                            content: [
+                                { type: 'heading', text: '١-٢: جمع الأدلة' },
+                                { type: 'paragraph', text: 'في التجارب العلمية، لا يكفي أخذ قراءة واحدة. لضمان الموثوقية وتقليل تأثير الأخطاء العشوائية، يجب جمع مجموعة من الأدلة أو القراءات وتحليلها بشكل صحيح.' },
+                                { type: 'heading4', text: 'أهمية تكرار القياسات' },
+                                { type: 'paragraph', text: 'يساعد تكرار القياسات على تحديد مدى تقارب النتائج (الدقة) واكتشاف أي قراءات شاذة. القيمة الأكثر تمثيلاً للحقيقة هي متوسط هذه القراءات.' },
+                                { type: 'rule', title: 'حساب المتوسط الحسابي', text: '$\\text{المتوسط} = \\frac{\\text{مجموع القراءات}}{\\text{عدد القراءات}}$' },
+                                { type: 'paragraph', text: 'عند التخطيط لتجربة، من المهم اختيار مدى مناسب للمتغير الذي تقوم بتغييره، وأخذ قراءات موزعة بشكل جيد على هذا المدى. هذا يسمح لك برؤية العلاقة بين المتغيرات بشكل أوضح وتجنب استنتاجات خاطئة.' },
+                                { 
+                                    type: 'example', 
+                                    title: 'مثال: قياس زمن سقوط كرة',
+                                    parts: [
+                                        { problem: 'قام طالب بقياس زمن سقوط كرة 5 مرات، وكانت النتائج: 1.2s, 1.3s, 1.1s, 1.2s, 1.8s. احسب متوسط الزمن.', solution: 'أولاً، نلاحظ أن القراءة 1.8s هي قراءة شاذة لأنها بعيدة جداً عن باقي القراءات، لذلك نستبعدها. <br>مجموع القراءات المتبقية = 1.2 + 1.3 + 1.1 + 1.2 = 4.8 s <br> عدد القراءات = 4 <br> المتوسط = 4.8 / 4 = 1.2 s.' }
+                                    ]
+                                },
+                                {
+                                    type: 'exercise',
+                                    title: 'تمرينات الدرس',
+                                    questions: [
+                                        { type: 'true_false', question: 'يكفي أخذ قراءة واحدة في التجربة إذا كانت أداة القياس دقيقة جداً.', answer: 'خطأ. تكرار القياسات ضروري دائمًا لتقليل الأخطاء العشوائية وزيادة موثوقية النتائج.' },
+                                        { type: 'problem', question: 'لماذا من المهم تغطية مدى واسع من القيم للمتغير المستقل في التجربة؟', answer: 'لتحديد العلاقة بين المتغيرات بشكل واضح ودقيق. إذا كانت النقاط مقتصرة على مدى صغير، قد لا يظهر النمط الحقيقي للعلاقة أو قد يتم تفسيره بشكل خاطئ.' }
+                                    ]
+                                },
+                                { 
+                                    type: 'definitions',
+                                    title: 'مصطلحات علمية',
+                                    terms: [
+                                        { term: 'القراءة الشاذة (Anomalous Result)', definition: 'هي القراءة التي تبتعد بشكل واضح عن بقية القراءات في مجموعة من القياسات المكررة، ويجب استبعادها عند حساب المتوسط.' },
+                                        { term: 'المدى (Range)', definition: 'هو الفرق بين أعلى وأقل قراءة في مجموعة من القياسات.' }
+                                    ]
+                                }
+                            ]
+                        },
+                        { 
+                            title: "١-٣ الدقة والضبط والأخطاء وعدم اليقين",
+                            content: [
+                                { type: 'heading', text: '١-٣: الدقة، الضبط، الأخطاء، وعدم اليقين' },
+                                { type: 'paragraph', text: 'عند إجراء أي قياس، نحاول إيجاد القيمة الحقيقية للكمية، ولكن لا يوجد قياس مثالي. دائماً ما يكون هناك قدر من عدم اليقين. فهم هذه المفاهيم أساسي لتقييم جودة النتائج التجريبية.' },
+                                { type: 'heading4', text: 'الدقة والضبط (Precision and Accuracy)' },
+                                { type: 'paragraph', text: '<b>الدقة (Precision)</b>: تصف مدى تقارب القياسات المتكررة من بعضها البعض. القياسات الدقيقة لا تكون بالضرورة قريبة من القيمة الحقيقية. <br><b>الضبط (Accuracy)</b>: يصف مدى قرب القياس من القيمة الحقيقية (المقبولة).' },
+                                { type: 'rule', title: 'مثال توضيحي (لوحة التصويب)', text: 'تخيل أن القيمة الحقيقية هي مركز لوحة التصويب: <br> • <b>دقة عالية وضبط منخفض</b>: تكون كل رمياتك متجمعة في بقعة صغيرة ولكنها بعيدة عن المركز. <br> • <b>ضبط عالي ودقة منخفضة</b>: تكون رمياتك متناثرة ولكن متوسطها يقع في المركز. <br> • <b>دقة وضبط عاليان</b>: تكون كل رمياتك متجمعة في المركز.' },
+                                { type: 'heading4', text: 'أنواع الأخطاء' },
+                                { type: 'paragraph', text: '<b>الأخطاء النظامية (Systematic Errors)</b>: هي أخطاء تؤثر على القياسات بنفس المقدار والاتجاه في كل مرة، مما يجعل النتائج غير مضبوطة ولكنها قد تكون دقيقة. أمثلتها: خطأ صفري في الأداة أو خطأ اختلاف المنظر المتكرر. <br><b>الأخطاء العشوائية (Random Errors)</b>: هي أخطاء غير متوقعة ومتغيرة تؤثر على القياسات بشكل عشوائي، مما يجعل النتائج غير دقيقة. يمكن تقليلها بتكرار القياس وأخذ المتوسط.' },
+                                {
+                                    type: 'exercise',
+                                    title: 'تمرينات الدرس',
+                                    questions: [
+                                        { type: 'mcq', question: 'إذا كانت جميع قياساتك أعلى من القيمة الحقيقية بمقدار 0.2 cm، فهذا يعتبر خطأ:', options: ['عشوائي', 'نظامي', 'إنساني', 'لا يعتبر خطأ'], answer: 'نظامي' },
+                                        { type: 'true_false', question: 'يمكن أن تكون مجموعة من القياسات دقيقة ولكنها غير مضبوطة.', answer: 'صحيح.' }
+                                    ]
+                                },
+                                { 
+                                    type: 'definitions',
+                                    title: 'مصطلحات علمية',
+                                    terms: [
+                                        { term: 'عدم اليقين (Uncertainty)', definition: 'هو تقدير للمدى الذي يُحتمل أن تقع ضمنه القيمة الحقيقية للكمية المقاسة.' },
+                                        { term: 'الخطأ الصفري (Zero Error)', definition: 'نوع من الأخطاء النظامية يحدث عندما تعطي الأداة قراءة غير صفرية عندما يجب أن تكون القيمة الحقيقية صفراً.' }
+                                    ]
+                                }
+                            ]
+                        },
+                        { 
+                            title: "١-٤ إيجاد قيمة عدم اليقين",
+                             content: [
+                                { type: 'heading', text: '١-٤: إيجاد قيمة عدم اليقين' },
+                                { type: 'paragraph', text: 'عدم اليقين ليس "خطأ"، بل هو جزء أساسي من أي عملية قياس ويعبر عن مدى ثقتنا في القراءة. هو مدى من القيم نتوقع أن تكون القيمة الحقيقية ضمنه.' },
+                                { type: 'heading4', text: 'طرق تقدير عدم اليقين المطلق' },
+                                { type: 'paragraph', text: 'هناك طريقتان رئيسيتان لتقدير قيمة عدم اليقين في قراءة ما:' },
+                                { type: 'rule', title: '1. من قراءة واحدة (باستخدام تدريج الأداة)', text: 'عادة ما يؤخذ عدم اليقين على أنه نصف قيمة أصغر تدريج في الأداة. فمثلاً، مسطرة مدرجة بالمليمترات (أصغر تدريج = 1 mm)، يكون عدم اليقين في تحديد موقع علامة واحدة هو ±0.5 mm. إذا كنت تقيس طول جسم، فأنت تحدد نقطتي البداية والنهاية، لذا يتضاعف عدم اليقين ليصبح ±1 mm.' },
+                                { type: 'rule', title: '2. من قراءات متكررة', text: 'هذه الطريقة أفضل لأنها تأخذ في الاعتبار الأخطاء العشوائية. يتم حساب عدم اليقين على أنه نصف المدى. <br> $$\\text{عدم اليقين} = \\frac{1}{2} \\times (\\text{أكبر قراءة} - \\text{أصغر قراءة})$$' },
+                                { 
+                                    type: 'example', 
+                                    title: 'مثال: حساب عدم اليقين',
+                                    parts: [
+                                        { problem: 'سجل طالب القراءات التالية لطول ما: 22.9cm, 22.7cm, 22.9cm, 23.0cm, 23.1cm. احسب الطول مع عدم اليقين.', solution: 'المتوسط = (22.9+22.7+22.9+23.0+23.1)/5 = 22.92 cm. <br> أكبر قراءة = 23.1 cm، أصغر قراءة = 22.7 cm. <br> المدى = 23.1 - 22.7 = 0.4 cm. <br> عدم اليقين = 0.5 × 0.4 = 0.2 cm. <br> النتيجة النهائية تكتب: (22.9 ± 0.2) cm. (تم تقريب المتوسط ليتناسب مع منزلة عدم اليقين).' }
+                                    ]
+                                },
+                                {
+                                    type: 'exercise',
+                                    title: 'تمرينات الدرس',
+                                    questions: [
+                                        { type: 'problem', question: 'عند قياس درجة حرارة سائل باستخدام ميزان حرارة مدرج لكل درجة مئوية، ما هو عدم اليقين في قراءة واحدة؟', answer: 'أصغر تدريج هو 1 درجة مئوية. عدم اليقين هو نصف أصغر تدريج، أي ±0.5 درجة مئوية.' },
+                                        { type: 'true_false', question: 'إذا تكررت جميع القراءات وكانت متطابقة، فإن عدم اليقين يساوي صفراً.', answer: 'خطأ. لا يمكن أن يقل عدم اليقين أبداً عن دقة الأداة (نصف أصغر تدريج).' }
+                                    ]
+                                }
+                            ]
+                        },
+                        { 
+                            title: "١-٥ النسبة المئوية لعدم اليقين",
+                            content: [
+                                { type: 'heading', text: '١-٥: النسبة المئوية لعدم اليقين' },
+                                { type: 'paragraph', text: 'عدم اليقين المطلق (مثل ±0.2 cm) يعطينا فكرة عن حجم الشك في القياس، ولكن أهميته تختلف باختلاف القيمة المقاسة. لذلك، نستخدم النسبة المئوية لعدم اليقين لمقارنة دقة القياسات المختلفة.' },
+                                { type: 'rule', title: 'حساب النسبة المئوية لعدم اليقين', text: '$$ \\text{النسبة المئوية لعدم اليقين} = \\frac{\\text{عدم اليقين المطلق}}{\\text{القيمة المقاسة}} \\times 100\\% $$' },
+                                { 
+                                    type: 'example', 
+                                    title: 'مثال: مقارنة قياسين',
+                                    parts: [
+                                        { problem: 'قياسان: أ = (100 ± 1) cm و ب = (10 ± 1) cm. أيهما أكثر دقة؟', solution: 'بالرغم من أن عدم اليقين المطلق متساوٍ (1 cm)، إلا أن النسبة المئوية تختلف: <br> النسبة المئوية لـ أ = (1/100) × 100% = 1%. <br> النسبة المئوية لـ ب = (1/10) × 100% = 10%. <br> القياس (أ) أكثر دقة لأن نسبة عدم اليقين فيه أقل.' }
+                                    ]
+                                },
+                                { type: 'paragraph', text: 'يمكن تقليل النسبة المئوية لعدم اليقين عن طريق قياس كميات أكبر. مثلاً، لقياس الزمن الدوري لبندول، من الأفضل قياس زمن 20 اهتزازة ثم القسمة على 20 بدلاً من قياس زمن اهتزازة واحدة.' },
+                                {
+                                    type: 'exercise',
+                                    title: 'تمرينات الدرس',
+                                    questions: [
+                                        { type: 'problem', question: 'قيست كتلة جسم فكانت (50 ± 2) g. احسب النسبة المئوية لعدم اليقين.', answer: 'النسبة المئوية = (2 / 50) × 100% = 4%.' }
+                                    ]
+                                }
+                            ]
+                        },
+                        { 
+                            title: "١-٦ جمع قيم عدم اليقين",
+                            content: [
+                                { type: 'heading', text: '١-٦: جمع قيم عدم اليقين' },
+                                { type: 'paragraph', text: 'عندما نستخدم قياسات لها عدم يقين في عمليات حسابية (جمع، طرح، ضرب، قسمة)، يجب أن نحدد عدم اليقين في النتيجة النهائية. هناك قواعد بسيطة لذلك.' },
+                                { type: 'rule', title: 'قاعدة الجمع والطرح', text: 'عند جمع أو طرح كميتين، نجمع قيم عدم اليقين المطلقة لهما. <br> إذا كان $z = x + y$ أو $z = x - y$، فإن $\\Delta z = \\Delta x + \\Delta y$.' },
+                                { type: 'rule', title: 'قاعدة الضرب والقسمة', text: 'عند ضرب أو قسمة كميتين، نجمع النسب المئوية لعدم اليقين لهما.' },
+                                { 
+                                    type: 'example', 
+                                    title: 'مثال: حساب محيط مستطيل',
+                                    parts: [
+                                        { problem: 'طول مستطيل (10.0 ± 0.1) cm وعرضه (5.0 ± 0.1) cm. احسب محيطه وعدم اليقين فيه.', solution: 'المحيط = 2 × (الطول + العرض) = 2 × (10.0 + 5.0) = 30.0 cm. <br> عدم اليقين في المحيط = 2 × (Δالطول + Δالعرض) = 2 × (0.1 + 0.1) = 0.4 cm. <br> المحيط = (30.0 ± 0.4) cm.' }
+                                    ]
+                                },
+                                {
+                                    type: 'exercise',
+                                    title: 'تمرينات الدرس',
+                                    questions: [
+                                        { type: 'problem', question: 'قيس فرق جهد (12.0 ± 0.5) V وتيار (3.0 ± 0.2) A. احسب المقاومة R = V/I وعدم اليقين فيها.', answer: 'المقاومة R = 12.0 / 3.0 = 4.0 Ω. <br> % عدم يقين V = (0.5/12.0)×100 ≈ 4.17%. <br> % عدم يقين I = (0.2/3.0)×100 ≈ 6.67%. <br> % عدم يقين R = 4.17% + 6.67% = 10.84%. <br> عدم اليقين المطلق في R = 10.84% من 4.0 ≈ 0.43 Ω. <br> R = (4.0 ± 0.4) Ω.' }
+                                    ]
+                                }
+                            ]
+                        },
+                        { 
+                            title: "١-٧ تسجيل النتائج",
+                            content: [
+                                { type: 'heading', text: '١-٧: تسجيل النتائج' },
+                                { type: 'paragraph', text: 'تسجيل النتائج بطريقة منظمة وواضحة هو جزء حيوي من أي عمل تجريبي. يجب أن يكون الجدول أو الرسم البياني سهل القراءة والفهم لأي شخص يطلع عليه.' },
+                                { type: 'heading4', text: 'الجداول' },
+                                { type: 'rule', title: 'قواعد تصميم الجداول', text: '1. يجب أن يكون لكل جدول عنوان وصفي. <br> 2. يجب أن يكون لكل عمود عنوان يوضح الكمية المقاسة ورمزها ووحدة القياس بين قوسين (مثال: الزمن t (s)). <br> 3. يجب تسجيل جميع القراءات في عمود واحد بنفس عدد المنازل العشرية، بما يتناسب مع دقة الأداة. <br> 4. يجب فصل الكميات المقاسة عن الكميات المحسوبة.' },
+                                { type: 'heading4', text: 'الرسوم البيانية' },
+                                { type: 'paragraph', text: 'الرسوم البيانية هي أداة قوية لتحليل البيانات وإيجاد العلاقات بين المتغيرات.' },
+                                { type: 'rule', title: 'قواعد رسم المنحنيات', text: '1. اختر محاور مناسبة (المتغير المستقل على المحور السيني x، والتابع على الصادي y). <br> 2. ضع عنواناً لكل محور مع ذكر الكمية والوحدة. <br> 3. اختر مقياس رسم مناسب بحيث يشغل الرسم معظم مساحة الورقة. <br> 4. مثّل النقاط بوضوح (باستخدام x أو دوائر صغيرة). <br> 5. ارسم خط الاتجاه الأفضل (Best-fit line) الذي يمر بأكبر عدد ممكن من النقاط ويتوسطها.' },
+                                {
+                                    type: 'exercise',
+                                    title: 'تمرينات الدرس',
+                                    questions: [
+                                        { type: 'problem', question: 'ماذا يمثل ميل الخط المستقيم في منحنى (الإزاحة-الزمن)؟', answer: 'يمثل ميل الخط المستقيم السرعة المتجهة.' }
+                                    ]
+                                }
+                            ]
+                        },
+                        { 
+                            title: "١-٨ فهم الوحدات في النظام الدولي للوحدات (SI)",
+                            content: [
+                                { type: 'heading', text: '١-٨: فهم الوحدات في النظام الدولي للوحدات (SI)' },
+                                { type: 'paragraph', text: 'للتواصل العلمي بشكل فعال عالمياً، اتفق العلماء على استخدام نظام موحد للوحدات يسمى النظام الدولي للوحدات (Système International d\'Unités)، واختصاره SI.' },
+                                { type: 'heading4', text: 'الوحدات الأساسية والمشتقة' },
+                                { type: 'paragraph', text: 'يتكون نظام SI من سبع وحدات أساسية تُعرّف منها جميع الوحدات الأخرى، والتي تسمى بالوحدات المشتقة.' },
+                                { type: 'rule', title: 'الوحدات الأساسية الخمسة المستخدمة في هذا المنهج', text: '• الطول: المتر (m) <br> • الكتلة: الكيلوجرام (kg) <br> • الزمن: الثانية (s) <br> • شدة التيار الكهربائي: الأمبير (A) <br> • درجة الحرارة المطلقة: الكلفن (K)' },
+                                { type: 'paragraph', text: 'أما الوحدات المشتقة فهي مزيج من الوحدات الأساسية. مثلاً، وحدة السرعة هي متر/ثانية (m/s)، ووحدة القوة هي النيوتن (N) والتي تكافئ (kg⋅m/s²).' },
+                                { type: 'heading4', text: 'البادئات (Prefixes)' },
+                                { type: 'paragraph', text: 'لتسهيل التعامل مع الأرقام الكبيرة جداً والصغيرة جداً، نستخدم البادئات مع الوحدات.' },
+                                { 
+                                    type: 'example', 
+                                    title: 'مثال: استخدام البادئات',
+                                    parts: [
+                                        { problem: 'حول 2.5 كيلومتر (km) إلى أمتار (m).', solution: 'البادئة "كيلو" (k) تعني 1000 أو 10³. <br> 2.5 km = 2.5 × 1000 m = 2500 m.' },
+                                        { problem: 'حول 300 ميكروثانية (µs) إلى ثوانٍ (s).', solution: 'البادئة "ميكرو" (µ) تعني 0.000001 أو 10⁻⁶. <br> 300 µs = 300 × 10⁻⁶ s = 3 × 10⁻⁴ s.' }
+                                    ]
+                                },
+                                {
+                                    type: 'exercise',
+                                    title: 'تمرينات الدرس',
+                                    questions: [
+                                        { type: 'problem', question: 'حول 1 cm² إلى m²', answer: '1 cm = 10⁻² m. <br> 1 cm² = (10⁻² m)² = 10⁻⁴ m².' }
+                                    ]
+                                }
+                            ]
+                        },
+                        { 
+                            type: 'general_problems', 
+                            title: "مسائل عامة على الوحدة",
+                            content: [
+                                {
+                                    type: 'exercise',
+                                    title: 'مسائل مراجعة شاملة للوحدة الأولى',
+                                    questions: [
+                                        { type: 'problem', question: '<b>(1)</b> قام طالب بقياس أبعاد كتاب وكانت كالتالي: الطول = (25.4 ± 0.1) cm، العرض = (20.2 ± 0.1) cm. احسب مساحة الكتاب والنسبة المئوية لعدم اليقين في المساحة.', answer: 'المساحة = 25.4 × 20.2 = 513.08 cm². <br> النسبة المئوية لعدم اليقين في الطول = (0.1 / 25.4) × 100% ≈ 0.39%. <br> النسبة المئوية لعدم اليقين في العرض = (0.1 / 20.2) × 100% ≈ 0.49%. <br> النسبة المئوية لعدم اليقين في المساحة = 0.39% + 0.49% = 0.88%.' },
+                                        { type: 'mcq', question: '<b>(2)</b> أي مما يلي يعتبر خطأ نظامياً؟', options: ['خطأ اختلاف المنظر', 'تذبذب قراءة الفولتميتر الرقمي', 'تغير درجة حرارة الغرفة أثناء التجربة', 'زمن رد الفعل البشري'], answer: 'خطأ اختلاف المنظر' },
+                                        { type: 'true_false', question: '<b>(3)</b> يمكن تقليل الخطأ العشوائي عن طريق تكرار القياسات وأخذ المتوسط.', answer: 'صحيح.' },
+                                        { type: 'matching', question: '<b>(4)</b> صل بين الكمية ووحدتها في النظام الدولي (SI):', premises: ['1. الطول', '2. الكتلة', '3. الزمن', '4. شدة التيار'], responses: ['أ. الكيلوجرام (kg)', 'ب. الثانية (s)', 'ج. الأمبير (A)', 'د. المتر (m)'], answer: '1-د، 2-أ، 3-ب، 4-ج' },
+                                        { type: 'problem', question: '<b>(5)</b> حول القيمة 500 nm إلى وحدة المتر.', answer: 'البادئة نانو (n) تعني 10⁻⁹. <br> 500 nm = 500 × 10⁻⁹ m = 5 × 10⁻⁷ m.' },
+                                        { type: 'mcq', question: '<b>(6)</b> مجموعة قياسات كانت (4.1, 4.2, 4.0, 5.8, 4.3). أي قراءة تعتبر شاذة؟', options: ['4.0', '4.3', '5.8', '4.1'], answer: '5.8' },
+                                        { type: 'problem', question: '<b>(7)</b> ما الفرق بين الدقة والضبط؟', answer: 'الدقة (Precision) تشير إلى مدى تقارب القياسات المتكررة من بعضها البعض. الضبط (Accuracy) يشير إلى مدى قرب قيمة القياس من القيمة الحقيقية أو المقبولة.' },
+                                        { type: 'true_false', question: '<b>(8)</b> عند جمع كميتين، نقوم بجمع قيم عدم اليقين المطلقة لهما.', answer: 'صحيح.' },
+                                        { type: 'problem', question: '<b>(9)</b> قيس فرق جهد (5.0 ± 0.2) V وتيار (2.0 ± 0.1) A. احسب قيمة المقاومة R = V/I وعدم اليقين المطلق فيها.', answer: 'R = 5.0 / 2.0 = 2.5 Ω. <br> % عدم يقين V = (0.2/5.0)×100 = 4%. <br> % عدم يقين I = (0.1/2.0)×100 = 5%. <br> % عدم يقين R = 4% + 5% = 9%. <br> عدم اليقين المطلق في R = 9% من 2.5 = 0.09 × 2.5 = 0.225 Ω. <br> R = (2.5 ± 0.2) Ω.' },
+                                        { type: 'mcq', question: '<b>(10)</b> البادئة "ميجا" (M) تعني:', options: ['10³', '10⁶', '10⁹', '10⁻⁶'], answer: '10⁶' },
+                                        { type: 'problem', question: '<b>(11)</b> سجلت النتائج التالية لطول قلم: 15.2cm, 15.1cm, 15.3cm, 15.2cm. احسب متوسط الطول وقيمة عدم اليقين المطلق.', answer: 'المتوسط = (15.2+15.1+15.3+15.2)/4 = 15.2 cm. <br> المدى = 15.3 - 15.1 = 0.2 cm. <br> عدم اليقين = نصف المدى = 0.2 / 2 = 0.1 cm. <br> الطول = (15.2 ± 0.1) cm.' },
+                                        { type: 'true_false', question: '<b>(12)</b> الخطأ الصفري هو مثال على خطأ عشوائي.', answer: 'خطأ. الخطأ الصفري هو مثال على خطأ نظامي.' },
+                                        { type: 'problem', question: '<b>(13)</b> ما هي الكميات الأساسية السبع في النظام الدولي للوحدات (SI)؟', answer: 'الطول (متر)، الكتلة (كيلوجرام)، الزمن (ثانية)، شدة التيار الكهربائي (أمبير)، درجة الحرارة المطلقة (كلفن)، كمية المادة (مول)، شدة الإضاءة (كانديلا).' },
+                                        { type: 'mcq', question: '<b>(14)</b> وحدة قياس القوة (النيوتن) هي وحدة:', options: ['أساسية', 'مشتقة', 'لا أساسية ولا مشتقة', 'إنجليزية'], answer: 'مشتقة' },
+                                        { type: 'problem', question: '<b>(15)</b> إذا كانت قراءة ميزان حرارة تزيد بمقدار 2 درجة مئوية عن القيمة الفعلية دائماً، فما نوع هذا الخطأ؟', answer: 'خطأ نظامي.' },
+                                        { type: 'true_false', question: '<b>(16)</b> عند ضرب كميتين، نطرح النسب المئوية لعدم اليقين.', answer: 'خطأ. نقوم بجمع النسب المئوية لعدم اليقين.' },
+                                        { type: 'problem', question: '<b>(17)</b> اشرح كيف يمكن إعداد جدول مناسب لتسجيل النتائج في تجربة فيزيائية.', answer: 'يجب أن يحتوي الجدول على أعمدة واضحة لكل متغير. كل عمود يجب أن يكون له عنوان يوضح الكمية المقاسة ورمزها ووحدة القياس (مثال: الزمن t (s)). يجب تسجيل جميع القراءات بنفس عدد المنازل العشرية التي تسمح بها الأداة.' },
+                                        { type: 'mcq', question: '<b>(18)</b> أي من الأدوات التالية تستخدم لقياس القطر الداخلي لأنبوب بدقة؟', options: ['مسطرة', 'ميكروميتر', 'قدمة ذات ورنية', 'ميزان'], answer: 'قدمة ذات ورنية' },
+                                        { type: 'problem', question: '<b>(19)</b> عبر عن وحدة التسارع (m/s²) باستخدام الوحدات الأساسية فقط.', answer: 'وحدة التسارع (m/s²) معبر عنها بالفعل باستخدام الوحدات الأساسية فقط (المتر والثانية).' },
+                                        { type: 'true_false', question: '<b>(20)</b> الضبط العالي يعني بالضرورة دقة عالية.', answer: 'خطأ. يمكن أن تكون القياسات مضبوطة (قريبة من القيمة الحقيقية) ولكن غير دقيقة (متباعدة عن بعضها)، والعكس صحيح.' },
+                                        { type: 'problem', question: '<b>(21)</b> ميكروميتر به خطأ صفري موجب مقداره +0.02 mm. إذا كانت القراءة الظاهرية لسمك شريحة هي 2.45 mm، فما هو السمك الحقيقي؟', answer: 'السمك الحقيقي = القراءة الظاهرية - الخطأ الصفري = 2.45 mm - 0.02 mm = 2.43 mm.' }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "الوحدة الثانية: السرعة والسرعة المتجهة",
+                    locked: false,
+                    lessons: [
+                        { type: 'videos', title: "فيديوهات الشرح", videos: [ {title: "مقدمة عن الحركة"}, {title: "الفرق بين الكميات القياسية والمتجهة"}, {title: "تحليل منحنيات الإزاحة-الزمن"}, {title: "جمع المتجهات هندسياً"}, {title: "طرح المتجهات"}, {title: "تطبيقات حياتية على السرعة"} ] },
+                        { 
+                            title: "٢-١ المسافة والإزاحة",
+                            content: [
+                                { type: 'heading', text: '٢-١: المسافة والإزاحة' },
+                                { type: 'paragraph', text: 'في حياتنا اليومية، قد نستخدم كلمتي "المسافة" و "الإزاحة" بنفس المعنى، ولكن في الفيزياء، لكل منهما معنى محدد ومختلف.' },
+                                { type: 'rule', title: 'الفرق الأساسي', text: '<b>المسافة (Distance)</b> هي الطول الكلي للمسار الذي يقطعه الجسم، وهي كمية قياسية (عددية) لها مقدار فقط. أما <b>الإزاحة (Displacement)</b> فهي أقصر مسافة مستقيمة بين نقطة البداية ونقطة النهاية، وهي كمية متجهة لها مقدار واتجاه.' },
+                                { 
+                                    type: 'example', 
+                                    title: 'مثال: حركة في مسار دائري',
+                                    parts: [
+                                        { problem: 'تحرك جسم على محيط دائرة نصف قطرها 7 أمتار وأكمل دورة كاملة. احسب المسافة المقطوعة والإزاحة.', solution: 'المسافة المقطوعة = محيط الدائرة = 2 × π × نق = 2 × (22/7) × 7 = 44 متر. <br> الإزاحة = صفر، لأن الجسم عاد إلى نقطة البداية.' }
+                                    ]
+                                },
+                                {
+                                    type: 'exercise',
+                                    title: 'تمرينات الدرس',
+                                    questions: [
+                                        { type: 'mcq', question: 'عندما يتحرك جسم ويعود إلى نقطة انطلاقه، فإن إزاحته تكون:', options: ['موجبة دائماً', 'سالبة دائماً', 'صفراً', 'تساوي المسافة المقطوعة'], answer: 'صفراً' },
+                                        { type: 'true_false', question: 'المسافة كمية متجهة بينما الإزاحة كمية قياسية.', answer: 'خطأ. العكس هو الصحيح.' },
+                                        { type: 'problem', question: 'تحرك شخص 4 أمتار شرقاً ثم 3 أمتار شمالاً. احسب كلاً من المسافة والإزاحة.', answer: 'المسافة = 4 + 3 = 7 أمتار. <br> الإزاحة (باستخدام نظرية فيثاغورس) = الجذر التربيعي لـ (4² + 3²) = الجذر التربيعي لـ (16 + 9) = الجذر التربيعي لـ 25 = 5 أمتار في اتجاه الشمال الشرقي.' }
+                                    ]
+                                },
+                                { 
+                                    type: 'definitions',
+                                    title: 'مصطلحات علمية',
+                                    terms: [
+                                        { term: 'الكمية القياسية (Scalar Quantity)', definition: 'كمية فيزيائية يتم تحديدها بالمقدار فقط، مثل المسافة، الزمن، الكتلة.' },
+                                        { term: 'الكمية المتجهة (Vector Quantity)', definition: 'كمية فيزيائية يتم تحديدها بالمقدار والاتجاه معاً، مثل الإزاحة، السرعة المتجهة، القوة.' }
+                                    ]
+                                }
+                            ]
+                        },
+                        { title: "٢-٢ السرعة والسرعة المتجهة" },
+                        { title: "٢-٣ التمثيل البياني (الإزاحة-الزمن)" },
+                        { title: "٢-٤ جمع الإزاحات" },
+                        { title: "٢-٥ جمع السرعات المتجهة" },
+                        { title: "٢-٦ طرح المتجهات" },
+                        { title: "٢-٧ أمثلة أخرى للكميات العددية والكميات المتجهة" },
+                        { type: 'general_problems', title: "مسائل عامة على الوحدة" }
+                    ]
+                },
+                {
+                    title: "الوحدة الثالثة: الحركة المتسارعة",
+                    locked: false,
+                    lessons: [
+                        { type: 'videos', title: "فيديوهات الشرح", videos: [ {title: "مفهوم التسارع"}, {title: "منحنيات السرعة-الزمن"}, {title: "المعادلة الأولى للحركة"}, {title: "المعادلة الثانية والثالثة للحركة"}, {title: "السقوط الحر"}, {title: "حركة المقذوفات"} ] },
+                        { title: "٣-١ معنى التسارع" },
+                        { title: "٣-٢ وحدات قياس التسارع" },
+                        { title: "٣-٣ استنتاج التسارع" },
+                        { title: "٣-٤ استنتاج الإزاحة" },
+                        { title: "٣-٥ تطبيقات عملية للتسارع" },
+                        { title: "٣-٦ تحديد السرعة المتجهة والتسارع في المختبر" },
+                        { title: "٣-٧ معادلات الحركة الخطية" },
+                        { title: "٣-٨ اشتقاق معادلات الحركة الخطية" },
+                        { title: "٣-٩ التسارع المنتظم وغير المنتظم" },
+                        { title: "٣-١٠ التسارع بسبب الجاذبية الأرضية" },
+                        { title: "٣-١١ تحديد تسارع السقوط الحر (g)" },
+                        { title: "٣-١٢ الحركة في بعدين: المقذوفات" },
+                        { title: "٣-١٣ فهم المقذوفات" },
+                        { type: 'general_problems', title: "مسائل عامة على الوحدة" }
+                    ]
+                },
+                {
+                    title: "الوحدة الرابعة: القوى",
+                    locked: false,
+                    lessons: [
+                        { type: 'videos', title: "فيديوهات الشرح", videos: [ {title: "قانون نيوتن الأول"}, {title: "قانون نيوتن الثاني"}, {title: "قانون نيوتن الثالث"}, {title: "مخطط الجسم الحر"}, {title: "تحليل القوى"}, {title: "الاتزان"} ] },
+                        { title: "٤-١ قانون نيوتن الثاني للحركة" },
+                        { title: "٤-٢ التعرف على أنواع القوى" },
+                        { title: "٤-٣ الكتلة والقصور الذاتي" },
+                        { title: "٤-٤ الحركة في الموائع" },
+                        { title: "٤-٥ قوى التلامس العمودية والطفو" },
+                        { title: "٤-٦ قانون نيوتن الثالث للحركة" },
+                        { title: "٤-٧ الوحدات الأساسية والنيوتن" },
+                        { title: "٤-٨ جمع القوى" },
+                        { title: "٤-٩ مركبات المتجهات" },
+                        { type: 'general_problems', title: "مسائل عامة على الوحدة" }
+                    ]
+                }
+            ]
+        };
+
+        // --- DOM ELEMENTS ---
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.getElementById('menu-btn');
+        const overlay = document.getElementById('overlay');
+        const tocContainer = document.getElementById('table-of-contents');
+        const pageDisplay = document.getElementById('page-display');
+        const pageContentContainer = document.getElementById('page-content-container');
+        const body = document.body;
+        const liveSessionBtn = document.getElementById('live-session-btn');
+        const shareBtn = document.getElementById('share-btn');
+        const shareModal = document.getElementById('share-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const copyUrlBtn = document.getElementById('copy-url-btn');
+        const shareUrlInput = document.getElementById('share-url-input');
+        const homeBtn = document.getElementById('home-btn');
+
+        // --- FUNCTIONS ---
+
+        function initialize() {
+            // Flatten the lessons array for easy indexing and navigation
+            allLessons = bookContent.units.flatMap((unit, unitIndex) => 
+                unit.lessons.map((lesson, lessonIndex) => ({
+                    ...lesson,
+                    unitIndex,
+                    lessonIndex,
+                    locked: unit.locked
+                }))
+            );
+            renderTableOfContents();
+            showCoverPage();
+        }
+
+        function renderTableOfContents() {
+            let html = '';
+            bookContent.units.forEach((unit, unitIndex) => {
+                html += `
+                    <details ${unitIndex === 0 ? 'open' : ''} class="mb-2">
+                        <summary class="font-bold cursor-pointer p-2 rounded-lg hover:bg-gray-100 transition-colors flex justify-between items-center">
+                            <span>${unit.title} ${unit.locked ? '<i class="fas fa-lock text-xs text-yellow-500"></i>' : ''}</span>
+                            <i class="fas fa-chevron-left arrow text-gray-500 text-xs"></i>
+                        </summary>
+                        <ul class="list-none pr-4 mt-1 border-r-2 border-gray-200">
+                `;
+                unit.lessons.forEach((lesson, lessonIndex) => {
+                    let icon = '';
+                    if (lesson.type === 'videos') {
+                        icon = '<i class="fas fa-play-circle text-red-500 ml-2"></i>';
+                    } else if (lesson.type === 'general_problems') {
+                        icon = '<i class="fas fa-cogs text-purple-500 ml-2"></i>';
+                    }
+                    html += `
+                        <li>
+                            <a href="#" class="block p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-unit-index="${unitIndex}" data-lesson-index="${lessonIndex}">
+                                ${icon}
+                                ${lesson.title}
+                            </a>
+                        </li>
+                    `;
+                });
+                html += `</ul></details>`;
+            });
+            tocContainer.innerHTML = html;
+        }
+        
+        function showCoverPage() {
+            pageContentContainer.style.aspectRatio = 'auto'; // Remove aspect ratio for cover
+            const coverHtml = `
+                <div class="w-full h-full cover-background p-8 flex flex-col text-center items-center justify-around relative overflow-hidden">
+                    
+                    <div class="flex flex-col items-center gap-2 z-10">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Oman.svg" alt="علم سلطنة عمان" class="w-16 h-10 object-contain shadow-sm">
+                        <p class="font-bold text-xl text-gray-700">سلطنة عُمان</p>
+                    </div>
+
+                    <div class="z-10">
+                        <h1 class="text-4xl md:text-5xl font-bold text-blue-900" style="text-shadow: 1px 1px 2px white;">الفيزياء</h1>
+                        <p class="text-xl md:text-2xl text-gray-600 mt-2">الصف الحادي عشر - الفصل الدراسي الأول</p>
+                        <img src="https://i.postimg.cc/5yN3WbqW/IMG-20250722-045629.jpg" alt="صورة الأستاذ عمرو ابو حسين" class="w-48 h-48 rounded-full mx-auto my-8 border-8 border-white shadow-lg object-cover">
+                        <h2 class="text-3xl font-bold text-gray-800">الأستاذ عمرو ابو حسين</h2>
+                        <p class="text-lg text-gray-500 mt-2">يرحب بكم ويتمنى لكم فصلاً دراسياً موفقاً</p>
+                    </div>
+
+                    <div class="z-10">
+                        <p class="text-sm text-gray-400">ابدأ رحلتك التعليمية باختيار درس من القائمة الجانبية</p>
+                    </div>
+                </div>
+            `;
+            pageDisplay.innerHTML = coverHtml;
+             setTimeout(() => { pageContentContainer.scrollTop = 0; }, 0);
+        }
+        
+        function showLockedContentPage() {
+            pageContentContainer.style.aspectRatio = 'auto';
+            const lockedHtml = `
+                <div class="lesson-content flex flex-col items-center justify-center text-center h-full">
+                    <i class="fas fa-lock text-yellow-500 text-7xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-gray-800">المحتوى مغلق</h3>
+                    <p class="max-w-md my-6 text-gray-600">هذا المحتوى للمشتركين فقط.</p>
+                    <div class="bg-green-50 border-r-4 border-green-500 p-6 rounded-lg my-6 text-right max-w-lg">
+                         <p>للاشتراك في الموقع والوصول لجميع الوحدات والدروس، يرجى <a href="https://wa.me/201283863088" target="_blank" class="font-bold text-green-600 underline">التواصل معنا عبر وتساب</a>.</p>
+                    </div>
+                </div>
+            `;
+            pageDisplay.innerHTML = lockedHtml;
+            setTimeout(() => { pageContentContainer.scrollTop = 0; }, 0);
+            if(window.innerWidth < 1024) {
+                toggleSidebar();
+            }
+        }
+
+        function showLiveSessionPage() {
+            pageContentContainer.style.aspectRatio = 'auto';
+            const liveHtml = `
+                <div class="lesson-content flex flex-col items-center justify-center text-center h-full">
+                    <i class="fas fa-broadcast-tower text-red-500 text-7xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-red-600">غرفة الشرح المباشر (Live)</h3>
+                    <p class="max-w-md my-6 text-gray-600">هنا بوابتك للتفاعل المباشر معنا، لطرح الأسئلة والحصول على شروحات إضافية لضمان التفوق.</p>
+                    
+                    <div class="bg-blue-50 border-r-4 border-blue-500 p-6 rounded-lg my-6 text-right max-w-lg">
+                        <p class="font-bold text-blue-800"><i class="fas fa-exclamation-circle ml-2"></i>معلومات هامة:</p>
+                        <ul class="list-disc pr-6 mt-4 text-gray-700">
+                            <li>هذه الغرفة <strong class="text-red-600">ليست مجانية</strong> وهي مخصصة للمشتركين فقط.</li>
+                            <li><i class="fas fa-calendar-alt ml-2"></i>مواعيد الحصص: يومي <strong class="text-blue-700">الأحد والثلاثاء</strong> من كل أسبوع.</li>
+                            <li><i class="fas fa-clock ml-2"></i>التوقيت: الساعة <strong class="text-blue-700">7:00 مساءً</strong>.</li>
+                            <li>للاشتراك في الحصص اللايف، يرجى <a href="https://wa.me/201283863088" target="_blank" class="font-bold text-green-600 underline">التواصل معنا عبر وتساب</a>.</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="bg-gray-800 text-white font-bold py-4 px-8 rounded-lg hover:bg-black transition-transform hover:scale-105 text-xl shadow-lg">
+                        <i class="fas fa-video ml-2"></i>
+                        دخول غرفة الشرح
+                    </a>
+                </div>
+            `;
+            pageDisplay.innerHTML = liveHtml;
+            setTimeout(() => { pageContentContainer.scrollTop = 0; }, 0);
+            if(window.innerWidth < 1024) {
+                toggleSidebar();
+            }
+        }
+        
+        function showGeneralProblemsPage(unitIndex, lessonIndex) {
+            pageContentContainer.style.aspectRatio = 'auto';
+            const unit = bookContent.units[unitIndex];
+            const lesson = unit.lessons[lessonIndex];
+
+            let finalHtml = `<div class="lesson-content"><h3><i class="fas fa-cogs text-purple-500 ml-2"></i> ${lesson.title}</h3>`;
+            
+            if (lesson.content && lesson.content[0].type === 'exercise') {
+                const item = lesson.content[0];
+                 finalHtml += `<div class="exercise-box"><h4>${item.title}</h4><ol class="list-decimal pr-8">`;
+                 item.questions.forEach((q, index) => {
+                    let questionId = `gp-answer-${unitIndex}-${lessonIndex}-${index}`;
+                    finalHtml += `<li class="mb-4">`;
+                    if (q.type === 'mcq') {
+                        finalHtml += `<p>${q.question}</p><div class="flex flex-col gap-2 mt-2">`;
+                        q.options.forEach((opt, optIndex) => {
+                            finalHtml += `<span><input type="radio" name="gp-mcq-${index}" id="gp-mcq-${index}-${optIndex}" class="ml-2"><label for="gp-mcq-${index}-${optIndex}">${opt}</label></span>`;
+                        });
+                        finalHtml += `</div>`;
+                    } else if (q.type === 'true_false') {
+                        finalHtml += `<p>${q.question}</p>`;
+                    } else if (q.type === 'matching') {
+                         finalHtml += `<p>${q.question}</p><div class="grid grid-cols-2 gap-4 mt-2"><ul>`;
+                         q.premises.forEach(p => finalHtml += `<li class="p-2 bg-blue-50 rounded">${p}</li>`);
+                         finalHtml += `</ul><ul class="flex flex-col justify-around">`;
+                         q.responses.forEach(r => finalHtml += `<li class="p-2 bg-green-50 rounded">${r}</li>`);
+                         finalHtml += `</ul></div>`;
+                    } else { // problem
+                         finalHtml += `<p>${q.question}</p>`;
+                    }
+                    
+                     finalHtml += `<button class="toggle-answer-btn bg-blue-500 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-600 mt-2" data-answer-id="${questionId}">إظهار الإجابة</button>
+                                    <div id="${questionId}" class="answer-container">
+                                        ${q.answer}
+                                    </div>
+                                 </li>`;
+                 });
+                 finalHtml += '</ol></div>';
+            }
+
+            finalHtml += '</div>';
+            pageDisplay.innerHTML = finalHtml;
+            setTimeout(() => { pageContentContainer.scrollTop = 0; }, 0);
+            if(window.innerWidth < 1024) {
+                toggleSidebar();
+            }
+        }
+
+
+        function showVideosPage(unitIndex) {
+            pageContentContainer.style.aspectRatio = 'auto';
+            const unit = bookContent.units[unitIndex];
+            let videosHtml = `
+                <div class="lesson-content">
+                    <h3><i class="fas fa-play-circle text-red-500 ml-2"></i> فيديوهات الشرح: ${unit.title}</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            `;
+            
+            const videos = unit.lessons.find(l => l.type === 'videos').videos || [];
+            
+            videos.forEach(video => {
+                videosHtml += `
+                    <div class="bg-gray-50 rounded-lg p-4 border">
+                        <a href="#" class="block bg-black aspect-video rounded-md flex items-center justify-center text-white mb-3 hover:bg-gray-800">
+                            <i class="fas fa-play fa-3x"></i>
+                        </a>
+                        <h4 class="font-semibold text-center">${video.title}</h4>
+                    </div>
+                `;
+            });
+
+            videosHtml += '</div></div>';
+            pageDisplay.innerHTML = videosHtml;
+            setTimeout(() => { pageContentContainer.scrollTop = 0; }, 0);
+            if(window.innerWidth < 1024) {
+                toggleSidebar();
+            }
+        }
+
+
+        function showLesson(unitIndex, lessonIndex, fromSidebar = false) {
+            const unit = bookContent.units[unitIndex];
+            if (unit.locked) {
+                showLockedContentPage();
+                return;
+            }
+
+            const lesson = unit.lessons[lessonIndex];
+            
+            if (lesson.type === 'videos') {
+                showVideosPage(unitIndex);
+                if (fromSidebar && window.innerWidth < 1024) {
+                    toggleSidebar();
+                }
+                return;
+            }
+
+            if (lesson.type === 'general_problems') {
+                showGeneralProblemsPage(unitIndex, lessonIndex);
+                if (fromSidebar && window.innerWidth < 1024) {
+                    toggleSidebar();
+                }
+                return;
+            }
+
+            // Restore aspect ratio for lessons only on desktop
+            if (window.innerWidth >= 768) {
+                pageContentContainer.style.aspectRatio = '210 / 297';
+            } else {
+                pageContentContainer.style.aspectRatio = 'auto';
+            }
+
+            // Update current state
+            currentUnitIndex = unitIndex;
+            currentLessonIndex = lessonIndex;
+
+            let finalHtml = '';
+            
+            if (lesson.content) {
+                let contentHtml = '<div class="lesson-content">';
+                lesson.content.forEach((item, itemIndex) => {
+                    switch (item.type) {
+                        case 'heading':
+                            contentHtml += `<h3>${item.text}</h3>`;
+                            break;
+                        case 'heading4':
+                            contentHtml += `<h4>${item.text}</h4>`;
+                            break;
+                        case 'paragraph':
+                            contentHtml += `<p>${item.text}</p>`;
+                            break;
+                        case 'rule':
+                            contentHtml += `<div class="rule-box"><strong>${item.title}:</strong><p class="mt-2">${item.text}</p></div>`;
+                            break;
+                        case 'example':
+                            contentHtml += `<div class="example-box"><h4>${item.title}</h4>`;
+                            item.parts.forEach(part => {
+                                contentHtml += `<p class="font-semibold">${part.problem}</p><div class="p-2 pr-4 bg-white rounded-md mb-2">${part.solution}</div>`;
+                            });
+                            contentHtml += '</div>';
+                            break;
+                        case 'exercise':
+                             contentHtml += `<div class="exercise-box"><h4>${item.title}</h4><ol class="list-decimal pr-8">`;
+                             item.questions.forEach((q, index) => {
+                                let questionId = `answer-${unitIndex}-${lessonIndex}-${itemIndex}-${index}`;
+                                contentHtml += `<li class="mb-4">`;
+                                if (q.type === 'mcq') {
+                                    contentHtml += `<p>${q.question}</p><div class="flex flex-col gap-2 mt-2">`;
+                                    q.options.forEach((opt, optIndex) => {
+                                        contentHtml += `<span><input type="radio" name="mcq-${index}" id="mcq-${index}-${optIndex}" class="ml-2"><label for="mcq-${index}-${optIndex}">${opt}</label></span>`;
+                                    });
+                                    contentHtml += `</div>`;
+                                } else if (q.type === 'true_false') {
+                                    contentHtml += `<p>${q.question}</p>`;
+                                } else if (q.type === 'matching') {
+                                     contentHtml += `<p>${q.question}</p><div class="grid grid-cols-2 gap-4 mt-2"><ul>`;
+                                     q.premises.forEach(p => contentHtml += `<li class="p-2 bg-blue-50 rounded">${p}</li>`);
+                                     contentHtml += `</ul><ul class="flex flex-col justify-around">`;
+                                     q.responses.forEach(r => contentHtml += `<li class="p-2 bg-green-50 rounded">${r}</li>`);
+                                     contentHtml += `</ul></div>`;
+                                } else { // problem
+                                     contentHtml += `<p>${q.question}</p>`;
+                                }
+                                
+                                 contentHtml += `<button class="toggle-answer-btn bg-blue-500 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-600 mt-2" data-answer-id="${questionId}">إظهار الإجابة</button>
+                                                <div id="${questionId}" class="answer-container">
+                                                    ${q.answer}
+                                                </div>
+                                             </li>`;
+                             });
+                             contentHtml += '</ol></div>';
+                             break;
+                        case 'definitions':
+                            contentHtml += `<div class="definitions-box"><h4>${item.title}</h4><ul>`;
+                            item.terms.forEach(t => {
+                                contentHtml += `<li class="mb-2"><strong>${t.term}:</strong> ${t.definition}</li>`;
+                            });
+                            contentHtml += `</ul></div>`;
+                            break;
+                    }
+                });
+                contentHtml += '</div>'; // End of lesson-content
+                finalHtml = contentHtml;
+
+            } else {
+                // Placeholder for lessons without content
+                finalHtml = `
+                    <div class="lesson-content h-full flex flex-col items-center justify-center">
+                        <h3 class="text-center">${lesson.title}</h3>
+                        <p class="mt-4">محتوى هذا الدرس قيد الإعداد حالياً. سيتم توفيره قريباً بإذن الله.</p>
+                        <i class="far fa-smile-wink text-yellow-500 text-5xl mt-8"></i>
+                    </div>
+                `;
+            }
+
+            // --- Navigation and Footer Section ---
+            const globalIndex = allLessons.findIndex(l => l.unitIndex === unitIndex && l.lessonIndex === lessonIndex);
+            const regularLessonsInUnit = bookContent.units[unitIndex].lessons.filter(l => l.type !== 'videos' && l.type !== 'general_problems').length;
+            const lessonNumberInUnit = bookContent.units[unitIndex].lessons.slice(0, lessonIndex + 1).filter(l => l.type !== 'videos' && l.type !== 'general_problems').length;
+            const pageNumber = `${lessonNumberInUnit}/${regularLessonsInUnit}`;
+
+
+            let footerHtml = '<div class="lesson-navigation-footer">';
+            let navHtml = '<div class="flex justify-between items-center">';
+            const prevLesson = findPrevLesson(globalIndex);
+            const nextLesson = findNextLesson(globalIndex);
+
+            if (prevLesson) {
+                navHtml += `<button class="nav-btn bg-gray-200 text-gray-700 w-10 h-10 rounded-full hover:bg-gray-300 transition-colors flex items-center justify-center" data-unit-index="${prevLesson.unitIndex}" data-lesson-index="${prevLesson.lessonIndex}" aria-label="الدرس السابق"><i class="fas fa-chevron-right"></i></button>`;
+            } else {
+                navHtml += '<div></div>'; // Placeholder for alignment
+            }
+
+            if (nextLesson) {
+                navHtml += `<button class="nav-btn bg-gray-200 text-gray-700 w-10 h-10 rounded-full hover:bg-gray-300 transition-colors flex items-center justify-center" data-unit-index="${nextLesson.unitIndex}" data-lesson-index="${nextLesson.lessonIndex}" aria-label="الدرس التالي"><i class="fas fa-chevron-left"></i></button>`;
+            } else {
+                navHtml += '<div></div>'; // Placeholder for alignment
+            }
+            navHtml += '</div>';
+            footerHtml += navHtml;
+
+            // Page Footer
+            footerHtml += `
+                <div class="mt-8 border-t border-gray-300 pt-4 flex justify-between items-center text-gray-600 text-sm">
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.postimg.cc/5yN3WbqW/IMG-20250722-045629.jpg" alt="صورة الأستاذ عمرو" class="w-10 h-10 rounded-full border-2 border-blue-500 object-cover">
+                        <p>لمزيد من الشروحات والدروس المباشرة <a href="https://wa.me/201283863088" target="_blank" class="font-semibold text-blue-600 underline">تواصل معنا عبر وتساب</a>.</p>
+                    </div>
+                    <p class="font-bold text-lg">${pageNumber}</p>
+                </div>
+            `;
+            
+            footerHtml += '</div>'; // End of lesson-navigation-footer
+            
+            pageDisplay.innerHTML = finalHtml + footerHtml;
+
+            setTimeout(() => { pageContentContainer.scrollTop = 0; }, 0);
+
+            if (window.MathJax) {
+                MathJax.typesetPromise([pageDisplay]).catch(function (err) {
+                    console.log('MathJax error: ' + err.message);
+                });
+            }
+            
+            if(fromSidebar && window.innerWidth < 1024) {
+                toggleSidebar();
+            }
+        }
+
+        function findRegularLesson(startIndex, direction) {
+            let index = startIndex + direction;
+            while (index >= 0 && index < allLessons.length) {
+                const lesson = allLessons[index];
+                if (lesson.type !== 'videos' && lesson.type !== 'general_problems') {
+                    return lesson;
+                }
+                index += direction;
+            }
+            return null;
+        }
+
+        function findPrevLesson(globalIndex) {
+            return findRegularLesson(globalIndex, -1);
+        }
+
+        function findNextLesson(globalIndex) {
+            return findRegularLesson(globalIndex, 1);
+        }
+
+
+        function toggleSidebar() {
+            const isOpen = !sidebar.classList.contains('translate-x-full');
+            if (isOpen) {
+                sidebar.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+                body.classList.remove('sidebar-open');
+            } else {
+                sidebar.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                body.classList.add('sidebar-open');
+            }
+        }
+
+        // --- EVENT LISTENERS ---
+        menuBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+        liveSessionBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showLiveSessionPage();
+        });
+        homeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showCoverPage();
+        });
+
+        tocContainer.addEventListener('click', function(e) {
+            const link = e.target.closest('a');
+            if (link && link.dataset.unitIndex !== undefined) {
+                e.preventDefault();
+                showLesson(parseInt(link.dataset.unitIndex), parseInt(link.dataset.lessonIndex), true);
+            }
+        });
+        
+        pageDisplay.addEventListener('click', function(e) {
+            const answerBtn = e.target.closest('.toggle-answer-btn');
+            if (answerBtn) {
+                const answerId = answerBtn.dataset.answerId;
+                const answerDiv = document.getElementById(answerId);
+                if (answerDiv) {
+                    answerDiv.classList.toggle('show');
+                    if (answerDiv.classList.contains('show')) {
+                        answerBtn.textContent = 'إخفاء الإجابة';
+                        answerBtn.classList.remove('bg-blue-500');
+                        answerBtn.classList.add('bg-gray-500');
+                    } else {
+                        answerBtn.textContent = 'إظهار الإجابة';
+                        answerBtn.classList.remove('bg-gray-500');
+                        answerBtn.classList.add('bg-blue-500');
+                    }
+                }
+            }
+
+            const navBtn = e.target.closest('.nav-btn');
+            if (navBtn) {
+                showLesson(parseInt(navBtn.dataset.unitIndex), parseInt(navBtn.dataset.lessonIndex), false);
+            }
+        });
+
+        shareBtn.addEventListener('click', () => {
+            const shareData = {
+                title: 'الفيزياء | أ. عمرو ابو حسين',
+                text: 'شرح تفاعلي لمنهج الفيزياء للصف الحادي عشر في سلطنة عُمان.',
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData).catch(console.error);
+            } else {
+                shareUrlInput.value = window.location.href;
+                shareModal.classList.remove('hidden');
+                shareModal.classList.add('flex');
+            }
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            shareModal.classList.add('hidden');
+            shareModal.classList.remove('flex');
+        });
+
+        copyUrlBtn.addEventListener('click', () => {
+            shareUrlInput.select();
+            document.execCommand('copy');
+            copyUrlBtn.textContent = 'تم النسخ!';
+            setTimeout(() => {
+                copyUrlBtn.textContent = 'نسخ الرابط';
+            }, 2000);
+        });
+        
+        // --- INITIALIZATION ---
+        
+        // Load MathJax for rendering LaTeX
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.async = true;
+        document.head.appendChild(script);
+
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          },
+          startup: {
+            ready: () => {
+              MathJax.startup.defaultReady();
+              initialize();
+            }
+          }
+        };
+
+    </script>
+</body>
+</html>
