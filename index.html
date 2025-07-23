@@ -207,10 +207,10 @@
 </head>
 <body class="bg-gray-100 antialiased">
 
-    <div id="app-container" class="flex h-screen">
+    <div id="app-container" class="relative h-screen overflow-y-hidden lg:flex">
 
         <!-- Main Content Area -->
-        <main class="flex-1 flex flex-col transition-all duration-300">
+        <main class="flex-1 flex flex-col h-full">
             <!-- Header -->
             <header class="bg-white shadow-md p-3 flex justify-between items-center z-20">
                 <div class="flex items-center gap-2 md:gap-4">
@@ -267,7 +267,7 @@
         </main>
 
         <!-- Sidebar -->
-        <aside id="sidebar" class="w-full max-w-xs bg-white shadow-lg p-4 fixed top-0 right-0 h-full transform translate-x-full lg:relative lg:translate-x-0 transition-transform duration-300 z-40 flex flex-col">
+        <aside id="sidebar" class="w-full max-w-xs bg-white shadow-lg p-4 fixed top-0 right-0 h-full transform translate-x-full lg:relative lg:translate-x-0 lg:w-80 transition-transform duration-300 z-40 flex flex-col">
             <div class="text-center mb-6">
                 <img src="https://i.postimg.cc/5yN3WbqW/IMG-20250722-045629.jpg" alt="صورة الأستاذ عمرو ابو حسين" class="w-24 h-24 rounded-full mx-auto mb-3 border-4 border-blue-200 object-cover">
                 <h2 class="text-xl font-bold text-gray-800">الأستاذ عمرو ابو حسين</h2>
@@ -333,7 +333,7 @@
                                 { type: 'paragraph', text: 'تعتبر القدرة على استخدام أدوات القياس بشكل صحيح واتباع التعليمات بدقة هي حجر الزاوية في الفيزياء التجريبية. القياسات الدقيقة تؤدي إلى نتائج موثوقة يمكن البناء عليها.' },
                                 { type: 'heading4', text: 'القدمة ذات الورنية (Vernier Caliper)' },
                                 { type: 'paragraph', text: 'هي أداة قياس دقيقة تستخدم لقياس الأبعاد الخارجية والداخلية وأعماق الأجسام. تتكون من تدريج رئيسي ثابت (مثل المسطرة) وتدريج آخر منزلق يسمى الورنية، وهو ما يسمح بقراءة أجزاء صغيرة من التدريج الرئيسي.' },
-                                { type: 'html', content: '<img src="https://i.postimg.cc/dQS20wWQ/Capture-20250723-215612.jpg" alt="صورة القدمة ذات الورنية" class="mx-auto my-4 rounded-lg shadow-md">' },
+                                { type: 'html', content: '<img src="https://i.postimg.cc/dQS20wWQ/Capture-20250723-215612.jpg" alt="صورة القدمة ذات الورنية" class="mx-auto my-4 rounded-lg shadow-md max-w-full h-auto">' },
                                 { type: 'rule', title: 'خطوات قراءة القدمة ذات الورنية', text: '1. <b>قراءة التدريج الرئيسي:</b> انظر إلى صفر التدريج المنزلق (الورنية). اقرأ آخر تدريج كامل مر عليه الصفر على المسطرة الرئيسية (بالمليمتر). <br> 2. <b>قراءة الورنية:</b> ابحث عن الخط على تدريج الورنية الذي يتطابق تماماً مع أي خط على التدريج الرئيسي. <br> 3. <b>الحصول على القراءة النهائية:</b> اضرب رقم الخط المتطابق في دقة القدمة (عادة 0.1 mm) وأضف الناتج إلى قراءة التدريج الرئيسي.' },
                                 { 
                                     type: 'example', 
@@ -344,7 +344,7 @@
                                 },
                                 { type: 'heading4', text: 'الميكروميتر (Micrometer)' },
                                 { type: 'paragraph', text: 'هو أداة أكثر دقة من القدمة، يستخدم لقياس الأبعاد الصغيرة جداً مثل سمك الأسلاك أو الأوراق بدقة تصل إلى 0.01 mm. يتكون من تدريج رئيسي على الأسطوانة الثابتة وتدريج دائري على الأسطوانة المتحركة (الكُم).' },
-                                { type: 'html', content: '<img src="https://i.postimg.cc/0jr7CBNq/Capture-20250723-215719.jpg" alt="صورة الميكروميتر" class="mx-auto my-4 rounded-lg shadow-md">' },
+                                { type: 'html', content: '<img src="https://i.postimg.cc/0jr7CBNq/Capture-20250723-215719.jpg" alt="صورة الميكروميتر" class="mx-auto my-4 rounded-lg shadow-md max-w-full h-auto">' },
                                 { type: 'rule', title: 'خطوات قراءة الميكروميتر', text: '1. <b>قراءة التدريج الرئيسي:</b> اقرأ آخر تدريج ظاهر على الأسطوانة الثابتة. لاحظ أن هناك تدريجات للمليمترات الكاملة (فوق الخط) وأنصاف المليمترات (تحت الخط). <br> 2. <b>قراءة التدريج الدائري:</b> انظر إلى الخط على التدريج الدائري الذي يتطابق مع الخط الأفقي للتدريج الرئيسي. اضرب هذا الرقم في دقة الميكروميتر (0.01 mm). <br> 3. <b>الحصول على القراءة النهائية:</b> اجمع قراءة التدريج الرئيسي مع قراءة التدريج الدائري.' },
                                 { 
                                     type: 'example', 
@@ -416,13 +416,13 @@
                                 { type: 'paragraph', text: 'عند إجراء أي قياس، نحاول إيجاد القيمة الحقيقية للكمية، ولكن لا يوجد قياس مثالي. دائماً ما يكون هناك قدر من عدم اليقين. فهم هذه المفاهيم أساسي لتقييم جودة النتائج التجريبية.' },
                                 { type: 'heading4', text: 'الدقة والضبط (Precision and Accuracy)' },
                                 { type: 'paragraph', text: '<b>الدقة (Precision)</b>: تصف مدى تقارب القياسات المتكررة من بعضها البعض. القياسات الدقيقة لا تكون بالضرورة قريبة من القيمة الحقيقية. <br><b>الضبط (Accuracy)</b>: يصف مدى قرب القياس من القيمة الحقيقية (المقبولة).' },
-                                { type: 'html', content: '<img src="https://i.postimg.cc/CKPCXqQ0/Capture-20250723-231642.jpg" alt="صورة توضح الفرق بين الدقة والضبط" class="mx-auto my-4 rounded-lg shadow-md">' },
+                                { type: 'html', content: '<img src="https://i.postimg.cc/CKPCXqQ0/Capture-20250723-231642.jpg" alt="صورة توضح الفرق بين الدقة والضبط" class="mx-auto my-4 rounded-lg shadow-md max-w-full h-auto">' },
                                 { type: 'heading4', text: 'أنواع الأخطاء' },
                                 { type: 'paragraph', text: '<b>الأخطاء العشوائية (Random Errors)</b>: هي أخطاء غير متوقعة ومتغيرة تؤثر على القياسات بشكل عشوائي، مما يجعل النتائج غير دقيقة. يمكن تقليلها بتكرار القياس وأخذ المتوسط.' },
                                 { type: 'paragraph', text: '<b>الأخطاء النظامية (Systematic Errors)</b>: هي أخطاء تؤثر على القياسات بنفس المقدار والاتجاه في كل مرة، مما يجعل النتائج غير مضبوطة ولكنها قد تكون دقيقة. مثالها الرئيسي هو الخطأ الصفري.' },
                                 { type: 'heading4', text: 'الخطأ الصفري (Zero Error)' },
                                 { type: 'paragraph', text: 'يحدث الخطأ الصفري عندما لا تبدأ أداة القياس من الصفر تماماً. على سبيل المثال، قد يكون مؤشر الأميتر يشير إلى 0.2A حتى مع عدم وجود تيار. هذا يعني أن كل قراءة ستكون أعلى من القيمة الحقيقية بمقدار 0.2A.'},
-                                { type: 'html', content: '<img src="https://i.postimg.cc/hGPb2rMM/Capture-20250723-231715.jpg" alt="صورة توضح الخطأ الصفري" class="mx-auto my-4 rounded-lg shadow-md">' },
+                                { type: 'html', content: '<img src="https://i.postimg.cc/hGPb2rMM/Capture-20250723-231715.jpg" alt="صورة توضح الخطأ الصفري" class="mx-auto my-4 rounded-lg shadow-md max-w-full h-auto">' },
                                 { type: 'rule', title: 'تصحيح الخطأ الصفري', text: 'يتم تصحيح القراءة عن طريق طرح قيمة الخطأ الصفري إذا كان موجباً، أو إضافة قيمته إذا كان سالباً.' },
                                 {
                                     type: 'exercise',
