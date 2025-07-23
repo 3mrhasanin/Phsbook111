@@ -24,7 +24,7 @@
     <meta name="twitter:image" content="https://i.postimg.cc/5yN3WbqW/IMG-20250722-045629.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/sXHTySQs/Copilot-20250710-190617.png">
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/P5gLpC3g/N-ACADEMY-LOGO.png">
 
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -97,17 +97,24 @@
         }
         
         /* Watermark style */
-        .watermark {
+        .watermark-container {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 12vw; /* Significantly increased font size */
-            color: rgba(0, 0, 0, 0.07); /* Dark watermark */
-            font-weight: 700;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             pointer-events: none;
             z-index: 1;
-            white-space: nowrap; /* Ensures the name stays on one line */
+            overflow: hidden;
+        }
+        .watermark-container img {
+            width: 80%;
+            height: auto;
+            opacity: 0.1;
+            transform: rotate(-45deg);
         }
         
         /* Styling for the lesson content */
@@ -216,9 +223,9 @@
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
                         <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-32 z-30 right-0 md:right-auto">
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">الصف 10</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">الصف  11</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">الصف 12 </a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">الصف العاشر</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">الصف الحادي عشر</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">الصف الثاني عشر</a>
                         </div>
                     </div>
                      <div class="relative group">
@@ -327,17 +334,31 @@
                             content: [
                                 { type: 'heading', text: '١-١: استخدام الأدوات واتباع التعليمات' },
                                 { type: 'paragraph', text: 'تعتبر القدرة على استخدام أدوات القياس بشكل صحيح واتباع التعليمات بدقة هي حجر الزاوية في الفيزياء التجريبية. القياسات الدقيقة تؤدي إلى نتائج موثوقة يمكن البناء عليها.' },
-                                { type: 'heading4', text: 'أدوات قياس الطول' },
-                                { type: 'paragraph', text: 'من أبسط الأدوات المسطرة المترية، ولكن لدقة أعلى نستخدم القدمة ذات الورنية والميكروميتر.' },
-                                { type: 'rule', title: 'خطأ اختلاف المنظر (Parallax Error)', text: 'هو الخطأ الذي يحدث بسبب النظر إلى تدريج أداة القياس من زاوية غير عمودية، مما يؤدي إلى قراءة غير صحيحة. لتجنب هذا الخطأ، يجب أن يكون خط النظر عمودياً تماماً على التدريج عند أخذ القراءة.' },
-                                { type: 'paragraph', text: 'قبل استخدام أدوات القياس الدقيقة مثل القدمة ذات الورنية والميكروميتر، من الضروري التحقق من وجود "الخطأ الصفري". يتم ذلك عن طريق إغلاق فكي الأداة بالكامل والتأكد من أن قراءتها صفر. إذا لم تكن صفراً، فيجب تعديل جميع القياسات اللاحقة بمقدار هذا الخطأ.' },
+                                { type: 'heading4', text: 'القدمة ذات الورنية (Vernier Caliper)' },
+                                { type: 'paragraph', text: 'هي أداة قياس دقيقة تستخدم لقياس الأبعاد الخارجية والداخلية وأعماق الأجسام. تتكون من تدريج رئيسي ثابت (مثل المسطرة) وتدريج آخر منزلق يسمى الورنية، وهو ما يسمح بقراءة أجزاء صغيرة من التدريج الرئيسي.' },
+                                { type: 'html', content: '<img src="https://i.postimg.cc/dQS20wWQ/Capture-20250723-215612.jpg" alt="صورة القدمة ذات الورنية" class="mx-auto my-4 rounded-lg shadow-md">' },
+                                { type: 'rule', title: 'خطوات قراءة القدمة ذات الورنية', text: '1. <b>قراءة التدريج الرئيسي:</b> انظر إلى صفر التدريج المنزلق (الورنية). اقرأ آخر تدريج كامل مر عليه الصفر على المسطرة الرئيسية (بالمليمتر). <br> 2. <b>قراءة الورنية:</b> ابحث عن الخط على تدريج الورنية الذي يتطابق تماماً مع أي خط على التدريج الرئيسي. <br> 3. <b>الحصول على القراءة النهائية:</b> اضرب رقم الخط المتطابق في دقة القدمة (عادة 0.1 mm) وأضف الناتج إلى قراءة التدريج الرئيسي.' },
                                 { 
                                     type: 'example', 
                                     title: 'مثال: قراءة القدمة ذات الورنية',
                                     parts: [
-                                        { problem: 'جسم تم قياس قطره باستخدام قدمة ذات ورنية، فكانت قراءة التدريج الثابت 2.5 cm، وانطبق تدريج الورنية رقم 4 مع تدريج المسطرة. أوجد القطر علماً أن دقة القدمة 0.01 cm.', solution: 'القراءة = قراءة التدريج الثابت + (رقم تدريج الورنية المنطبق × دقة القدمة) <br> القراءة = 2.5 cm + (4 × 0.01 cm) = 2.54 cm.' }
+                                        { problem: 'جسم تم قياس قطره باستخدام قدمة ذات ورنية، فكانت قراءة التدريج الثابت 25 mm، وانطبق تدريج الورنية رقم 4 مع تدريج المسطرة. أوجد القطر علماً أن دقة القدمة 0.1 mm.', solution: '$\\text{Reading} = \\text{Main Scale} + (\\text{Vernier Scale} \\times \\text{Accuracy})$ <br> $\\text{Reading} = 25 \\text{ mm} + (4 \\times 0.1 \\text{ mm}) = 25.4 \\text{ mm}$.' }
                                     ]
                                 },
+                                { type: 'heading4', text: 'الميكروميتر (Micrometer)' },
+                                { type: 'paragraph', text: 'هو أداة أكثر دقة من القدمة، يستخدم لقياس الأبعاد الصغيرة جداً مثل سمك الأسلاك أو الأوراق بدقة تصل إلى 0.01 mm. يتكون من تدريج رئيسي على الأسطوانة الثابتة وتدريج دائري على الأسطوانة المتحركة (الكُم).' },
+                                { type: 'html', content: '<img src="https://i.postimg.cc/0jr7CBNq/Capture-20250723-215719.jpg" alt="صورة الميكروميتر" class="mx-auto my-4 rounded-lg shadow-md">' },
+                                { type: 'rule', title: 'خطوات قراءة الميكروميتر', text: '1. <b>قراءة التدريج الرئيسي:</b> اقرأ آخر تدريج ظاهر على الأسطوانة الثابتة. لاحظ أن هناك تدريجات للمليمترات الكاملة (فوق الخط) وأنصاف المليمترات (تحت الخط). <br> 2. <b>قراءة التدريج الدائري:</b> انظر إلى الخط على التدريج الدائري الذي يتطابق مع الخط الأفقي للتدريج الرئيسي. اضرب هذا الرقم في دقة الميكروميتر (0.01 mm). <br> 3. <b>الحصول على القراءة النهائية:</b> اجمع قراءة التدريج الرئيسي مع قراءة التدريج الدائري.' },
+                                { 
+                                    type: 'example', 
+                                    title: 'مثال: قراءة الميكروميتر',
+                                    parts: [
+                                        { problem: 'ميكروميتر أظهر قراءة 7.5 mm على التدريج الرئيسي، وكان خط التطابق على التدريج الدائري هو 28. ما هو القياس؟', solution: '$\\text{Reading} = \\text{Main Scale} + (\\text{Circular Scale} \\times \\text{Accuracy})$ <br> $\\text{Reading} = 7.5 \\text{ mm} + (28 \\times 0.01 \\text{ mm}) = 7.5 + 0.28 = 7.78 \\text{ mm}$.' }
+                                    ]
+                                },
+                                { type: 'heading4', text: 'أخطاء شائعة في القياس' },
+                                { type: 'rule', title: 'خطأ اختلاف المنظر (Parallax Error)', text: 'هو الخطأ الذي يحدث بسبب النظر إلى تدريج أداة القياس من زاوية غير عمودية، مما يؤدي إلى قراءة غير صحيحة. لتجنب هذا الخطأ، يجب أن يكون خط النظر عمودياً تماماً على التدريج عند أخذ القراءة.' },
+                                { type: 'paragraph', text: 'قبل استخدام أدوات القياس الدقيقة مثل القدمة ذات الورنية والميكروميتر، من الضروري التحقق من وجود "الخطأ الصفري". يتم ذلك عن طريق إغلاق فكي الأداة بالكامل والتأكد من أن قراءتها صفر. إذا لم تكن صفراً، فيجب تعديل جميع القياسات اللاحقة بمقدار هذا الخطأ.' },
                                 {
                                     type: 'exercise',
                                     title: 'تمرينات الدرس',
@@ -364,7 +385,7 @@
                                 { type: 'paragraph', text: 'في التجارب العلمية، لا يكفي أخذ قراءة واحدة. لضمان الموثوقية وتقليل تأثير الأخطاء العشوائية، يجب جمع مجموعة من الأدلة أو القراءات وتحليلها بشكل صحيح.' },
                                 { type: 'heading4', text: 'أهمية تكرار القياسات' },
                                 { type: 'paragraph', text: 'يساعد تكرار القياسات على تحديد مدى تقارب النتائج (الدقة) واكتشاف أي قراءات شاذة. القيمة الأكثر تمثيلاً للحقيقة هي متوسط هذه القراءات.' },
-                                { type: 'rule', title: 'حساب المتوسط الحسابي', text: '$\\text{المتوسط} = \\frac{\\text{مجموع القراءات}}{\\text{عدد القراءات}}$' },
+                                { type: 'rule', title: 'حساب المتوسط الحسابي', text: '$\\text{Average} = \\frac{\\sum \\text{Readings}}{\\text{Number of Readings}}$' },
                                 { type: 'paragraph', text: 'عند التخطيط لتجربة، من المهم اختيار مدى مناسب للمتغير الذي تقوم بتغييره، وأخذ قراءات موزعة بشكل جيد على هذا المدى. هذا يسمح لك برؤية العلاقة بين المتغيرات بشكل أوضح وتجنب استنتاجات خاطئة.' },
                                 { 
                                     type: 'example', 
@@ -398,9 +419,14 @@
                                 { type: 'paragraph', text: 'عند إجراء أي قياس، نحاول إيجاد القيمة الحقيقية للكمية، ولكن لا يوجد قياس مثالي. دائماً ما يكون هناك قدر من عدم اليقين. فهم هذه المفاهيم أساسي لتقييم جودة النتائج التجريبية.' },
                                 { type: 'heading4', text: 'الدقة والضبط (Precision and Accuracy)' },
                                 { type: 'paragraph', text: '<b>الدقة (Precision)</b>: تصف مدى تقارب القياسات المتكررة من بعضها البعض. القياسات الدقيقة لا تكون بالضرورة قريبة من القيمة الحقيقية. <br><b>الضبط (Accuracy)</b>: يصف مدى قرب القياس من القيمة الحقيقية (المقبولة).' },
-                                { type: 'rule', title: 'مثال توضيحي (لوحة التصويب)', text: 'تخيل أن القيمة الحقيقية هي مركز لوحة التصويب: <br> • <b>دقة عالية وضبط منخفض</b>: تكون كل رمياتك متجمعة في بقعة صغيرة ولكنها بعيدة عن المركز. <br> • <b>ضبط عالي ودقة منخفضة</b>: تكون رمياتك متناثرة ولكن متوسطها يقع في المركز. <br> • <b>دقة وضبط عاليان</b>: تكون كل رمياتك متجمعة في المركز.' },
+                                { type: 'html', content: '<img src="https://i.postimg.cc/CKPCXqQ0/Capture-20250723-231642.jpg" alt="صورة توضح الفرق بين الدقة والضبط" class="mx-auto my-4 rounded-lg shadow-md">' },
                                 { type: 'heading4', text: 'أنواع الأخطاء' },
-                                { type: 'paragraph', text: '<b>الأخطاء النظامية (Systematic Errors)</b>: هي أخطاء تؤثر على القياسات بنفس المقدار والاتجاه في كل مرة، مما يجعل النتائج غير مضبوطة ولكنها قد تكون دقيقة. أمثلتها: خطأ صفري في الأداة أو خطأ اختلاف المنظر المتكرر. <br><b>الأخطاء العشوائية (Random Errors)</b>: هي أخطاء غير متوقعة ومتغيرة تؤثر على القياسات بشكل عشوائي، مما يجعل النتائج غير دقيقة. يمكن تقليلها بتكرار القياس وأخذ المتوسط.' },
+                                { type: 'paragraph', text: '<b>الأخطاء العشوائية (Random Errors)</b>: هي أخطاء غير متوقعة ومتغيرة تؤثر على القياسات بشكل عشوائي، مما يجعل النتائج غير دقيقة. يمكن تقليلها بتكرار القياس وأخذ المتوسط.' },
+                                { type: 'paragraph', text: '<b>الأخطاء النظامية (Systematic Errors)</b>: هي أخطاء تؤثر على القياسات بنفس المقدار والاتجاه في كل مرة، مما يجعل النتائج غير مضبوطة ولكنها قد تكون دقيقة. مثالها الرئيسي هو الخطأ الصفري.' },
+                                { type: 'heading4', text: 'الخطأ الصفري (Zero Error)' },
+                                { type: 'paragraph', text: 'يحدث الخطأ الصفري عندما لا تبدأ أداة القياس من الصفر تماماً. على سبيل المثال، قد يكون مؤشر الأميتر يشير إلى 0.2A حتى مع عدم وجود تيار. هذا يعني أن كل قراءة ستكون أعلى من القيمة الحقيقية بمقدار 0.2A.'},
+                                { type: 'html', content: '<img src="https://i.postimg.cc/hGPb2rMM/Capture-20250723-231715.jpg" alt="صورة توضح الخطأ الصفري" class="mx-auto my-4 rounded-lg shadow-md">' },
+                                { type: 'rule', title: 'تصحيح الخطأ الصفري', text: 'يتم تصحيح القراءة عن طريق طرح قيمة الخطأ الصفري إذا كان موجباً، أو إضافة قيمته إذا كان سالباً.' },
                                 {
                                     type: 'exercise',
                                     title: 'تمرينات الدرس',
@@ -413,8 +439,12 @@
                                     type: 'definitions',
                                     title: 'مصطلحات علمية',
                                     terms: [
-                                        { term: 'عدم اليقين (Uncertainty)', definition: 'هو تقدير للمدى الذي يُحتمل أن تقع ضمنه القيمة الحقيقية للكمية المقاسة.' },
-                                        { term: 'الخطأ الصفري (Zero Error)', definition: 'نوع من الأخطاء النظامية يحدث عندما تعطي الأداة قراءة غير صفرية عندما يجب أن تكون القيمة الحقيقية صفراً.' }
+                                        { term: 'عدم اليقين (Uncertainty)', definition: 'تقدير الفرق بين القراءة والقيمة الحقيقية للكمية المقاسة.' },
+                                        { term: 'الدقة (Precision)', definition: 'مدى تقارب نتائج القياس عند تكرار قياس الكمية نفسها عدة مرات.' },
+                                        { term: 'الضبط (Accuracy)', definition: 'مدى قرب القيمة المقاسة من القيمة الحقيقية.' },
+                                        { term: 'الخطأ النظامي (Systematic Error)', definition: 'يحدث بسبب اختلاف القراءات حول القيمة الحقيقية بمقدار ثابت في كل مرة تتم فيها القراءة.' },
+                                        { term: 'الخطأ الصفري (Zero Error)', definition: 'يحدث عندما تعطي الأداة قراءة غير صفرية لها مقدار معين وتكون القيمة الحقيقية للكمية صفراً.' },
+                                        { term: 'الخطأ العشوائي (Random Error)', definition: 'يحدث بسبب اختلاف القراءات حول متوسط القيمة المقاسة بطريقة غير متوقعة من قراءة إلى أخرى.' }
                                     ]
                                 }
                             ]
@@ -427,7 +457,7 @@
                                 { type: 'heading4', text: 'طرق تقدير عدم اليقين المطلق' },
                                 { type: 'paragraph', text: 'هناك طريقتان رئيسيتان لتقدير قيمة عدم اليقين في قراءة ما:' },
                                 { type: 'rule', title: '1. من قراءة واحدة (باستخدام تدريج الأداة)', text: 'عادة ما يؤخذ عدم اليقين على أنه نصف قيمة أصغر تدريج في الأداة. فمثلاً، مسطرة مدرجة بالمليمترات (أصغر تدريج = 1 mm)، يكون عدم اليقين في تحديد موقع علامة واحدة هو ±0.5 mm. إذا كنت تقيس طول جسم، فأنت تحدد نقطتي البداية والنهاية، لذا يتضاعف عدم اليقين ليصبح ±1 mm.' },
-                                { type: 'rule', title: '2. من قراءات متكررة', text: 'هذه الطريقة أفضل لأنها تأخذ في الاعتبار الأخطاء العشوائية. يتم حساب عدم اليقين على أنه نصف المدى. <br> $$\\text{عدم اليقين} = \\frac{1}{2} \\times (\\text{أكبر قراءة} - \\text{أصغر قراءة})$$' },
+                                { type: 'rule', title: '2. من قراءات متكررة', text: 'هذه الطريقة أفضل لأنها تأخذ في الاعتبار الأخطاء العشوائية. يتم حساب عدم اليقين على أنه نصف المدى. <br> $$\\text{Uncertainty} = \\frac{1}{2} \\times (\\text{Max Reading} - \\text{Min Reading})$$' },
                                 { 
                                     type: 'example', 
                                     title: 'مثال: حساب عدم اليقين',
@@ -437,10 +467,13 @@
                                 },
                                 {
                                     type: 'exercise',
-                                    title: 'تمرينات الدرس',
+                                    title: 'تمرينات من الكتاب المدرسي',
                                     questions: [
-                                        { type: 'problem', question: 'عند قياس درجة حرارة سائل باستخدام ميزان حرارة مدرج لكل درجة مئوية، ما هو عدم اليقين في قراءة واحدة؟', answer: 'أصغر تدريج هو 1 درجة مئوية. عدم اليقين هو نصف أصغر تدريج، أي ±0.5 درجة مئوية.' },
-                                        { type: 'true_false', question: 'إذا تكررت جميع القراءات وكانت متطابقة، فإن عدم اليقين يساوي صفراً.', answer: 'خطأ. لا يمكن أن يقل عدم اليقين أبداً عن دقة الأداة (نصف أصغر تدريج).' }
+                                        { type: 'problem', question: '<b>(سؤال 5)</b> يوضح الشكل ميزاناً ذا ذراع، يظهر في البداية بدون وجود كتلة في كفته، ثم يظهر وفي كفته كتلة معيارية مقدارها (200g). اشرح أنواع الأخطاء التي قد تظهر عند استخدام هذه الأداة.', answer: '1. <b>خطأ صفري:</b> إذا لم يكن المؤشر عند الصفر تماماً قبل وضع الكتلة. <br> 2. <b>خطأ نظامي:</b> قد يكون ناتجاً عن عدم دقة معايرة الميزان نفسه (الأوزان المعيارية غير صحيحة). <br> 3. <b>خطأ عشوائي:</b> قد ينتج عن قراءة التدريج من زاوية (خطأ اختلاف المنظر) أو اهتزاز المؤشر.' },
+                                        { type: 'problem', question: '<b>(سؤال 6)</b> قدر قيمة عدم اليقين في القياس عندما يقيس طالب طول غرفة باستخدام شريط قياس معاير بالمليمترات.', answer: 'أصغر تدريج هو 1mm. عند قياس طول الغرفة، يتم تحديد نقطتي البداية والنهاية. عدم اليقين عند كل نقطة هو ±0.5mm. إذن، عدم اليقين الكلي هو 0.5 + 0.5 = ±1mm.' },
+                                        { type: 'problem', question: '<b>(سؤال 7)</b> حدد مقدار عدم اليقين عندما تقيس فتاة درجة حرارة ماء ساخن باستخدام ميزان حرارة مدرج لكل درجة مئوية.', answer: 'أصغر تدريج هو 1 درجة مئوية. عدم اليقين في قراءة واحدة هو نصف أصغر تدريج، أي ±0.5 درجة مئوية.' },
+                                        { type: 'problem', question: '<b>(سؤال 8)</b> قدر قيمة عدم اليقين عندما يحاول أحد الطلبة قياس زمن تأرجح واحد كامل لبندول ما.', answer: 'قياس زمن تأرجح واحد صعب بسبب زمن رد الفعل البشري في بدء وإيقاف ساعة الإيقاف. أصغر تدريج في ساعة الإيقاف قد يكون 0.01s، لكن زمن رد الفعل أكبر بكثير. تقدير معقول لعدم اليقين سيكون في حدود ±0.1s إلى ±0.2s.' },
+                                        { type: 'problem', question: '<b>(سؤال 9)</b> ما القيمة المتوسطة وعدم اليقين في مجموعات القراءات الآتية؟ <br> أ. 20.6, 20.8, 20.5, 20.5 <br> ب. 3, 6, 3, 2, 0 <br> ج. 0.6, 1.0, 0.8, 1.2', answer: '<b>أ.</b> المتوسط = 20.6، المدى = 0.3، عدم اليقين = 0.15 ≈ 0.2. النتيجة: (20.6 ± 0.2) <br> <b>ب.</b> المتوسط = 2.8، المدى = 6، عدم اليقين = 3. النتيجة: (3 ± 3) <br> <b>ج.</b> المتوسط = 0.9، المدى = 0.6، عدم اليقين = 0.3. النتيجة: (0.9 ± 0.3)' }
                                     ]
                                 }
                             ]
@@ -450,7 +483,7 @@
                             content: [
                                 { type: 'heading', text: '١-٥: النسبة المئوية لعدم اليقين' },
                                 { type: 'paragraph', text: 'عدم اليقين المطلق (مثل ±0.2 cm) يعطينا فكرة عن حجم الشك في القياس، ولكن أهميته تختلف باختلاف القيمة المقاسة. لذلك، نستخدم النسبة المئوية لعدم اليقين لمقارنة دقة القياسات المختلفة.' },
-                                { type: 'rule', title: 'حساب النسبة المئوية لعدم اليقين', text: '$$ \\text{النسبة المئوية لعدم اليقين} = \\frac{\\text{عدم اليقين المطلق}}{\\text{القيمة المقاسة}} \\times 100\\% $$' },
+                                { type: 'rule', title: 'حساب النسبة المئوية لعدم اليقين', text: '$$ \\text{% Uncertainty} = \\frac{\\text{Absolute Uncertainty}}{\\text{Measured Value}} \\times 100\\% $$' },
                                 { 
                                     type: 'example', 
                                     title: 'مثال: مقارنة قياسين',
@@ -461,9 +494,11 @@
                                 { type: 'paragraph', text: 'يمكن تقليل النسبة المئوية لعدم اليقين عن طريق قياس كميات أكبر. مثلاً، لقياس الزمن الدوري لبندول، من الأفضل قياس زمن 20 اهتزازة ثم القسمة على 20 بدلاً من قياس زمن اهتزازة واحدة.' },
                                 {
                                     type: 'exercise',
-                                    title: 'تمرينات الدرس',
+                                    title: 'تمرينات من الكتاب المدرسي',
                                     questions: [
-                                        { type: 'problem', question: 'قيست كتلة جسم فكانت (50 ± 2) g. احسب النسبة المئوية لعدم اليقين.', answer: 'النسبة المئوية = (2 / 50) × 100% = 4%.' }
+                                        { type: 'problem', question: '<b>(سؤال 10)</b> قيس ارتفاع الماء في قنينة فكان 24.3cm، مع قيمة عدم يقين (0.2cm). احسب النسبة المئوية لعدم اليقين في هذا القياس.', answer: 'النسبة المئوية لعدم اليقين = (0.2 / 24.3) × 100% ≈ 0.82%.' },
+                                        { type: 'problem', question: '<b>(سؤال 11)</b> قيست الزاوية في حركة بندول بين موضع الاتزان وأقصى ازاحة له فكانت (35 ± 2)°. <br> أ. احسب النسبة المئوية لعدم اليقين في قياس هذه الزاوية. <br> ب. اقترح سبب ثقة المستخدم في قراءته عند إعطاء القراءة بعدم يقين في حدود (2°).', answer: '<b>أ.</b> النسبة المئوية لعدم اليقين = (2 / 35) × 100% ≈ 5.7%. <br> <b>ب.</b> المنقلة مدرجة بالدرجات (أصغر تدريج 1°). صعوبة تحديد زاوية أقصى إزاحة بدقة بسبب حركة البندول السريعة عند الأطراف، بالإضافة إلى سمك خيط البندول وخطأ اختلاف المنظر، كل هذا يجعل تقدير عدم اليقين بـ ±2° تقديراً معقولاً.'},
+                                        { type: 'problem', question: '<b>(سؤال 12)</b> قام طالب بقياس فرق جهد كهربائي بين قطبي بطارية فكانت النتيجة (12.4V) وذكر أن النسبة المئوية لعدم اليقين في قياسه هي (2%). احسب قيمة عدم اليقين المطلق في قياسه.', answer: 'عدم اليقين المطلق = (النسبة المئوية / 100) × القيمة المقاسة <br> عدم اليقين المطلق = (2 / 100) × 12.4V = 0.248V. نقربه إلى 0.2V (رقم معنوي واحد مناسب). <br> النتيجة: (12.4 ± 0.2) V.' }
                                     ]
                                 }
                             ]
@@ -484,9 +519,10 @@
                                 },
                                 {
                                     type: 'exercise',
-                                    title: 'تمرينات الدرس',
+                                    title: 'تمرينات من الكتاب المدرسي وأسئلة إضافية',
                                     questions: [
-                                        { type: 'problem', question: 'قيس فرق جهد (12.0 ± 0.5) V وتيار (3.0 ± 0.2) A. احسب المقاومة R = V/I وعدم اليقين فيها.', answer: 'المقاومة R = 12.0 / 3.0 = 4.0 Ω. <br> % عدم يقين V = (0.5/12.0)×100 ≈ 4.17%. <br> % عدم يقين I = (0.2/3.0)×100 ≈ 6.67%. <br> % عدم يقين R = 4.17% + 6.67% = 10.84%. <br> عدم اليقين المطلق في R = 10.84% من 4.0 ≈ 0.43 Ω. <br> R = (4.0 ± 0.4) Ω.' }
+                                        { type: 'problem', question: '<b>(سؤال 13)</b> قيست الكميات الآتية: A=(1.0±0.4)m, B=(2.0±0.2)m, C=(2.0±0.5)ms⁻¹, D=(0.20±0.01)s. احسب العمليات الحسابية الآتية مع قيمة عدم اليقين الخاص بها: <br> أ. A+B <br> ب. B-A <br> ج. C×D <br> د. B/D', answer: '<b>أ. A+B:</b> (1.0+2.0) ± (0.4+0.2) = (3.0 ± 0.6) m. <br><b>ب. B-A:</b> (2.0-1.0) ± (0.2+0.4) = (1.0 ± 0.6) m. <br><b>ج. C×D:</b> القيمة = 2.0×0.20 = 0.40 m. %ΔC = (0.5/2.0)×100=25%. %ΔD = (0.01/0.20)×100=5%. %Δ(CD) = 25+5=30%. Δ(CD)=30% of 0.40 = 0.12. النتيجة: (0.40 ± 0.12) m. <br><b>د. B/D:</b> القيمة = 2.0/0.20 = 10 m/s. %ΔB = (0.2/2.0)×100=10%. %ΔD = 5%. %Δ(B/D) = 10+5=15%. Δ(B/D)=15% of 10 = 1.5. النتيجة: (10.0 ± 1.5) m/s.' },
+                                        { type: 'problem', question: '<b>(سؤال إضافي)</b> إذا كانت مساحة مربع A = L²، وكان طول ضلعه L = (5.0 ± 0.1) cm. احسب مساحته وعدم اليقين فيها.', answer: 'المساحة = 5.0² = 25.0 cm². <br> عند رفع كمية لأس، نضرب النسبة المئوية لعدم اليقين في هذا الأس. <br> %ΔL = (0.1/5.0)×100 = 2%. <br> %ΔA = 2 × %ΔL = 2 × 2% = 4%. <br> ΔA = 4% of 25.0 = 1.0 cm². <br> المساحة = (25.0 ± 1.0) cm².' }
                                     ]
                                 }
                             ]
@@ -503,9 +539,10 @@
                                 { type: 'rule', title: 'قواعد رسم المنحنيات', text: '1. اختر محاور مناسبة (المتغير المستقل على المحور السيني x، والتابع على الصادي y). <br> 2. ضع عنواناً لكل محور مع ذكر الكمية والوحدة. <br> 3. اختر مقياس رسم مناسب بحيث يشغل الرسم معظم مساحة الورقة. <br> 4. مثّل النقاط بوضوح (باستخدام x أو دوائر صغيرة). <br> 5. ارسم خط الاتجاه الأفضل (Best-fit line) الذي يمر بأكبر عدد ممكن من النقاط ويتوسطها.' },
                                 {
                                     type: 'exercise',
-                                    title: 'تمرينات الدرس',
+                                    title: 'تمرينات من الكتاب المدرسي وأسئلة إضافية',
                                     questions: [
-                                        { type: 'problem', question: 'ماذا يمثل ميل الخط المستقيم في منحنى (الإزاحة-الزمن)؟', answer: 'يمثل ميل الخط المستقيم السرعة المتجهة.' }
+                                        { type: 'problem', question: '<b>(سؤال 16)</b> تركت كرة لتتدحرج على منحدر. تم قياس الارتفاع الرأسي (h) والمسافة الأفقية (d). والمطلوب إيجاد مربع المسافة d². أكمل الجدول التالي:', answer: 'يجب على الطالب تربيع قيم d. <br> 18.0²=324, 28.4²≈806, 35.8²≈1282, 41.6²≈1731, 47.3²≈2237, 53.6²≈2873. يجب كتابة النتائج في العمود المخصص.' },
+                                        { type: 'problem', question: '<b>(سؤال إضافي)</b> ماذا يمثل ميل الخط المستقيم في منحنى (السرعة-الزمن)؟', answer: 'يمثل ميل الخط المستقيم التسارع.' }
                                     ]
                                 }
                             ]
@@ -531,20 +568,34 @@
                                 },
                                 {
                                     type: 'exercise',
-                                    title: 'تمرينات الدرس',
+                                    title: 'تمرينات من الكتاب المدرسي وأسئلة إضافية',
                                     questions: [
-                                        { type: 'problem', question: 'حول 1 cm² إلى m²', answer: '1 cm = 10⁻² m. <br> 1 cm² = (10⁻² m)² = 10⁻⁴ m².' }
+                                        { type: 'problem', question: '<b>(سؤال 18)</b> جد مساحة صفحة واحدة من هذا الكتاب بوحدة cm² ثم حول القيمة بوحدة m².', answer: '(تعتمد الإجابة على قياس الطالب الفعلي للكتاب) مثال: لو كان الطول 28cm والعرض 21cm، المساحة = 588 cm². للتحويل: 1m = 100cm, 1m² = (100cm)² = 10000 cm². إذن 588 cm² = 588 / 10000 = 0.0588 m².' },
+                                        { type: 'problem', question: '<b>(سؤال 19)</b> اكتب قيم هذه الكميات باستخدام الأس العشري: 60pA, 2MW, 4ms', answer: '60 pA = 60 × 10⁻¹² A = 6 × 10⁻¹¹ A <br> 2 MW = 2 × 10⁶ W <br> 4 ms = 4 × 10⁻³ s' },
+                                        { type: 'problem', question: '<b>(سؤال إضافي)</b> هل المعادلة $v = a \\cdot t^2$ متجانسة من حيث الوحدات؟ (v: سرعة, a: تسارع, t: زمن)', answer: 'الطرف الأيسر (v) وحدته m/s. <br> الطرف الأيمن (a·t²) وحدته (m/s²)·(s²) = m. <br> الوحدات غير متساوية (m/s ≠ m)، إذن المعادلة غير متجانسة.' }
+                                    ]
+                                },
+                                { 
+                                    type: 'definitions',
+                                    title: 'مصطلحات علمية',
+                                    terms: [
+                                        { term: 'الوحدة الأساسية (Base Unit)', definition: 'وحدة محددة في النظام الدولي للوحدات (SI) تشتق منها جميع الوحدات الأخرى.' },
+                                        { term: 'الوحدة المشتقة (Derived Unit)', definition: 'الوحدة التي تتكون من عدد من الوحدات الأساسية المضمنة في النظام الدولي للوحدات (SI).' }
                                     ]
                                 }
                             ]
                         },
                         { 
+                            type: 'definitions_page', 
+                            title: "المصطلحات العلمية للوحدة"
+                        },
+                        { 
                             type: 'general_problems', 
-                            title: "مسائل عامة على الوحدة",
+                            title: "اختبر نفسك في الوحدة الأولى",
                             content: [
                                 {
                                     type: 'exercise',
-                                    title: 'مسائل مراجعة شاملة للوحدة الأولى',
+                                    title: 'اختبار شامل على الوحدة الأولى',
                                     questions: [
                                         { type: 'problem', question: '<b>(1)</b> قام طالب بقياس أبعاد كتاب وكانت كالتالي: الطول = (25.4 ± 0.1) cm، العرض = (20.2 ± 0.1) cm. احسب مساحة الكتاب والنسبة المئوية لعدم اليقين في المساحة.', answer: 'المساحة = 25.4 × 20.2 = 513.08 cm². <br> النسبة المئوية لعدم اليقين في الطول = (0.1 / 25.4) × 100% ≈ 0.39%. <br> النسبة المئوية لعدم اليقين في العرض = (0.1 / 20.2) × 100% ≈ 0.49%. <br> النسبة المئوية لعدم اليقين في المساحة = 0.39% + 0.49% = 0.88%.' },
                                         { type: 'mcq', question: '<b>(2)</b> أي مما يلي يعتبر خطأ نظامياً؟', options: ['خطأ اختلاف المنظر', 'تذبذب قراءة الفولتميتر الرقمي', 'تغير درجة حرارة الغرفة أثناء التجربة', 'زمن رد الفعل البشري'], answer: 'خطأ اختلاف المنظر' },
@@ -708,7 +759,9 @@
                     if (lesson.type === 'videos') {
                         icon = '<i class="fas fa-play-circle text-red-500 ml-2"></i>';
                     } else if (lesson.type === 'general_problems') {
-                        icon = '<i class="fas fa-cogs text-purple-500 ml-2"></i>';
+                        icon = '<i class="fas fa-tasks text-green-500 ml-2"></i>';
+                    } else if (lesson.type === 'definitions_page') {
+                        icon = '<i class="fas fa-book text-blue-500 ml-2"></i>';
                     }
                     html += `
                         <li>
@@ -728,7 +781,9 @@
             pageContentContainer.style.aspectRatio = 'auto'; // Remove aspect ratio for cover
             const coverHtml = `
                 <div class="w-full h-full cover-background p-8 flex flex-col text-center items-center justify-around relative overflow-hidden">
-                    
+                    <div class="watermark-container">
+                        <img src="https://i.postimg.cc/QtFg3d2T/Modern-Academic-Logo-for-Teaching-Brand-20250723-230100-0000.png" alt="Watermark">
+                    </div>
                     <div class="flex flex-col items-center gap-2 z-10">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Oman.svg" alt="علم سلطنة عمان" class="w-16 h-10 object-contain shadow-sm">
                         <p class="font-bold text-xl text-gray-700">سلطنة عُمان</p>
@@ -755,6 +810,9 @@
             pageContentContainer.style.aspectRatio = 'auto';
             const lockedHtml = `
                 <div class="lesson-content flex flex-col items-center justify-center text-center h-full">
+                    <div class="watermark-container">
+                        <img src="https://i.postimg.cc/QtFg3d2T/Modern-Academic-Logo-for-Teaching-Brand-20250723-230100-0000.png" alt="Watermark">
+                    </div>
                     <i class="fas fa-lock text-yellow-500 text-7xl mb-6"></i>
                     <h3 class="text-3xl font-bold text-gray-800">المحتوى مغلق</h3>
                     <p class="max-w-md my-6 text-gray-600">هذا المحتوى للمشتركين فقط.</p>
@@ -774,6 +832,9 @@
             pageContentContainer.style.aspectRatio = 'auto';
             const liveHtml = `
                 <div class="lesson-content flex flex-col items-center justify-center text-center h-full">
+                    <div class="watermark-container">
+                        <img src="https://i.postimg.cc/QtFg3d2T/Modern-Academic-Logo-for-Teaching-Brand-20250723-230100-0000.png" alt="Watermark">
+                    </div>
                     <i class="fas fa-broadcast-tower text-red-500 text-7xl mb-6"></i>
                     <h3 class="text-3xl font-bold text-red-600">غرفة الشرح المباشر (Live)</h3>
                     <p class="max-w-md my-6 text-gray-600">هنا بوابتك للتفاعل المباشر معنا، لطرح الأسئلة والحصول على شروحات إضافية لضمان التفوق.</p>
@@ -806,7 +867,11 @@
             const unit = bookContent.units[unitIndex];
             const lesson = unit.lessons[lessonIndex];
 
-            let finalHtml = `<div class="lesson-content"><h3><i class="fas fa-cogs text-purple-500 ml-2"></i> ${lesson.title}</h3>`;
+            let finalHtml = `<div class="lesson-content">
+                                <div class="watermark-container">
+                                    <img src="https://i.postimg.cc/QtFg3d2T/Modern-Academic-Logo-for-Teaching-Brand-20250723-230100-0000.png" alt="Watermark">
+                                </div>
+                                <h3><i class="fas fa-tasks text-green-500 ml-2"></i> ${lesson.title}</h3>`;
             
             if (lesson.content && lesson.content[0].type === 'exercise') {
                 const item = lesson.content[0];
@@ -848,6 +913,38 @@
                 toggleSidebar();
             }
         }
+        
+        function showDefinitionsPage(unitIndex) {
+            pageContentContainer.style.aspectRatio = 'auto';
+            const unit = bookContent.units[unitIndex];
+            let allTerms = [];
+            unit.lessons.forEach(lesson => {
+                if (lesson.content) {
+                    const defs = lesson.content.find(item => item.type === 'definitions');
+                    if (defs) {
+                        allTerms.push(...defs.terms);
+                    }
+                }
+            });
+
+            let finalHtml = `<div class="lesson-content">
+                                <div class="watermark-container">
+                                    <img src="https://i.postimg.cc/QtFg3d2T/Modern-Academic-Logo-for-Teaching-Brand-20250723-230100-0000.png" alt="Watermark">
+                                </div>
+                                <h3><i class="fas fa-book text-blue-500 ml-2"></i> المصطلحات العلمية للوحدة الأولى</h3>
+                                <div class="definitions-box">
+                                    <ul>`;
+            allTerms.forEach(term => {
+                finalHtml += `<li class="mb-3"><strong>${term.term}:</strong> ${term.definition}</li>`;
+            });
+            finalHtml += `</ul></div></div>`;
+
+            pageDisplay.innerHTML = finalHtml;
+            setTimeout(() => { pageContentContainer.scrollTop = 0; }, 0);
+            if(window.innerWidth < 1024) {
+                toggleSidebar();
+            }
+        }
 
 
         function showVideosPage(unitIndex) {
@@ -855,6 +952,9 @@
             const unit = bookContent.units[unitIndex];
             let videosHtml = `
                 <div class="lesson-content">
+                    <div class="watermark-container">
+                        <img src="https://i.postimg.cc/QtFg3d2T/Modern-Academic-Logo-for-Teaching-Brand-20250723-230100-0000.png" alt="Watermark">
+                    </div>
                     <h3><i class="fas fa-play-circle text-red-500 ml-2"></i> فيديوهات الشرح: ${unit.title}</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             `;
@@ -905,6 +1005,14 @@
                 }
                 return;
             }
+            
+            if (lesson.type === 'definitions_page') {
+                showDefinitionsPage(unitIndex);
+                 if (fromSidebar && window.innerWidth < 1024) {
+                    toggleSidebar();
+                }
+                return;
+            }
 
             // Restore aspect ratio for lessons only on desktop
             if (window.innerWidth >= 768) {
@@ -920,7 +1028,10 @@
             let finalHtml = '';
             
             if (lesson.content) {
-                let contentHtml = '<div class="lesson-content">';
+                let contentHtml = `<div class="lesson-content">
+                                    <div class="watermark-container">
+                                        <img src="https://i.postimg.cc/QtFg3d2T/Modern-Academic-Logo-for-Teaching-Brand-20250723-230100-0000.png" alt="Watermark">
+                                    </div>`;
                 lesson.content.forEach((item, itemIndex) => {
                     switch (item.type) {
                         case 'heading':
@@ -980,6 +1091,9 @@
                             });
                             contentHtml += `</ul></div>`;
                             break;
+                        case 'html':
+                            contentHtml += item.content;
+                            break;
                     }
                 });
                 contentHtml += '</div>'; // End of lesson-content
@@ -989,6 +1103,9 @@
                 // Placeholder for lessons without content
                 finalHtml = `
                     <div class="lesson-content h-full flex flex-col items-center justify-center">
+                        <div class="watermark-container">
+                            <img src="https://i.postimg.cc/QtFg3d2T/Modern-Academic-Logo-for-Teaching-Brand-20250723-230100-0000.png" alt="Watermark">
+                        </div>
                         <h3 class="text-center">${lesson.title}</h3>
                         <p class="mt-4">محتوى هذا الدرس قيد الإعداد حالياً. سيتم توفيره قريباً بإذن الله.</p>
                         <i class="far fa-smile-wink text-yellow-500 text-5xl mt-8"></i>
@@ -998,8 +1115,8 @@
 
             // --- Navigation and Footer Section ---
             const globalIndex = allLessons.findIndex(l => l.unitIndex === unitIndex && l.lessonIndex === lessonIndex);
-            const regularLessonsInUnit = bookContent.units[unitIndex].lessons.filter(l => l.type !== 'videos' && l.type !== 'general_problems').length;
-            const lessonNumberInUnit = bookContent.units[unitIndex].lessons.slice(0, lessonIndex + 1).filter(l => l.type !== 'videos' && l.type !== 'general_problems').length;
+            const regularLessonsInUnit = bookContent.units[unitIndex].lessons.filter(l => l.type !== 'videos' && l.type !== 'general_problems' && l.type !== 'definitions_page').length;
+            const lessonNumberInUnit = bookContent.units[unitIndex].lessons.slice(0, lessonIndex + 1).filter(l => l.type !== 'videos' && l.type !== 'general_problems' && l.type !== 'definitions_page').length;
             const pageNumber = `${lessonNumberInUnit}/${regularLessonsInUnit}`;
 
 
@@ -1009,13 +1126,13 @@
             const nextLesson = findNextLesson(globalIndex);
 
             if (prevLesson) {
-                navHtml += `<button class="nav-btn bg-gray-200 text-gray-700 w-10 h-10 rounded-full hover:bg-gray-300 transition-colors flex items-center justify-center" data-unit-index="${prevLesson.unitIndex}" data-lesson-index="${prevLesson.lessonIndex}" aria-label="الدرس السابق"><i class="fas fa-chevron-right"></i></button>`;
+                navHtml += `<button class="nav-btn bg-gray-200 text-gray-700 px-4 h-10 rounded-lg hover:bg-gray-300 transition-colors flex items-center justify-center gap-2" data-unit-index="${prevLesson.unitIndex}" data-lesson-index="${prevLesson.lessonIndex}" aria-label="الدرس السابق"><i class="fas fa-chevron-right"></i><span>السابق</span></button>`;
             } else {
                 navHtml += '<div></div>'; // Placeholder for alignment
             }
 
             if (nextLesson) {
-                navHtml += `<button class="nav-btn bg-gray-200 text-gray-700 w-10 h-10 rounded-full hover:bg-gray-300 transition-colors flex items-center justify-center" data-unit-index="${nextLesson.unitIndex}" data-lesson-index="${nextLesson.lessonIndex}" aria-label="الدرس التالي"><i class="fas fa-chevron-left"></i></button>`;
+                navHtml += `<button class="nav-btn bg-gray-200 text-gray-700 px-4 h-10 rounded-lg hover:bg-gray-300 transition-colors flex items-center justify-center gap-2" data-unit-index="${nextLesson.unitIndex}" data-lesson-index="${nextLesson.lessonIndex}" aria-label="الدرس التالي"><span>التالي</span><i class="fas fa-chevron-left"></i></button>`;
             } else {
                 navHtml += '<div></div>'; // Placeholder for alignment
             }
@@ -1054,7 +1171,7 @@
             let index = startIndex + direction;
             while (index >= 0 && index < allLessons.length) {
                 const lesson = allLessons[index];
-                if (lesson.type !== 'videos' && lesson.type !== 'general_problems') {
+                if (lesson.type !== 'videos' && lesson.type !== 'general_problems' && lesson.type !== 'definitions_page') {
                     return lesson;
                 }
                 index += direction;
